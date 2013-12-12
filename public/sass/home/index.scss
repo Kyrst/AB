@@ -11,7 +11,7 @@ $start_here_width: 645px;
 #splash
 {
 	height: 383px;
-	background: #080808 url(../../images/splash.png) no-repeat 50%;
+	background: #080808 url('/images/splash.png') no-repeat 50%;
 	//background-size: 100% 381px;
 	border-top: 1px solid #CCC;
 	border-bottom: 1px solid #CCC;
@@ -216,7 +216,7 @@ $start_here_width: 645px;
 {
 	width: 365px;
 	height: 40px;
-	background: #FFF url('../../images/home/index/newsletter_email_button_bg.gif');
+	background: #FFF url('/images/home/index/newsletter_email_button_bg.gif');
 	border-radius: 0;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
