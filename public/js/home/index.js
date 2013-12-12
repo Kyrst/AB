@@ -1,11 +1,11 @@
-var $newsletter_email, $newsletter_submit;
+var $newsletter_email, $newsletter_email_button;
 
 $(function()
 {
 	$newsletter_email = $('#newsletter_email');
-	$newsletter_submit = $('#newsletter_submit');
+	$newsletter_email_button = $('#newsletter_email_button');
 
-	$newsletter_email.on('keypress', function()
+	/*$newsletter_email.on('keypress', function()
 	{
 		if ( $newsletter_email.val() !== '' )
 		{
@@ -13,9 +13,9 @@ $(function()
 		}
 
 		$('#newsletter_submit').fadeIn('slow');
-	});
+	});*/
 
-	$newsletter_submit.on('click', function()
+	$newsletter_email_button.on('click', function()
 	{
 		submit_newsletter();
 	});
@@ -36,6 +36,9 @@ function submit_newsletter()
 
 		return;
 	}
+
+	$newsletter_email.prop('disabled', true);
+	$newsletter_email_button.prop('disabled', true);
 
 	$kyrst.ajax.post
 	(

@@ -24,9 +24,9 @@
 					<a id="logo" class="navbar-brand" href="/"><img src="<?= asset('images/logo.png') ?>" width="149" height="102"></a>
 				</div>
 
-				<div id="user_nav">
+				<?php /*<div id="user_nav">
 					<a href="<?= URL::route('sign-up') ?>" id="sign_up">Sign Up</a><a href="<?= URL::route('login') ?>" id="login">Login</a>
-				</div>
+				</div>*/ ?>
 			</div>
 		</div>
 

@@ -201,12 +201,51 @@ $start_here_width: 645px;
 
 #sign_up_description
 {
-	font-size: .8em;
+	font-size: .9em;
+	text-shadow: 0px 2px 0 rgba(255, 255, 255, .2)
+}
+
+#newsletter_email:focus, #newsletter_email_button:focus
+{
+	outline: 0;
+	outline-color: transparent;
+	outline-style: none;
 }
 
 #newsletter_email
 {
-	width: 400px
+	width: 365px;
+	height: 40px;
+	background: url('../../images/home/index/newsletter_email_button_bg.gif');
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	color: #777;
+	border-top-color: #79797B;
+	border-left-color: #79797B;
+}
+
+#newsletter_email[disabled]
+{
+	cursor: default
+}
+
+#newsletter_email_button
+{
+	color: #895A17;
+	height: 40px;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	font-family: 'Questrial';
+	font-size: 1.5em;
+	border-top-color: #ADADAE;
+	border-left-color: #ADADAE
+}
+
+#newsletter_email_button[disabled]
+{
+	opacity: .9;
 }
 
 #newsletter_submit
@@ -217,5 +256,9 @@ $start_here_width: 645px;
 
 #newsletter_submitted
 {
-	display: none
+	display: none;
+	margin-top: 45px;
+	color: #AAA;
+	font-size: 1.4em;
+	font-family: 'Questrial';
 }

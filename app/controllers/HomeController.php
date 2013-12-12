@@ -6,6 +6,17 @@ class HomeController extends ApplicationController
 {
 	public function index()
 	{
+		/*$email = 'nygganh@nygganh.se';
+
+		$result = Mail::send('emails.welcome_beta', array(), function($message) use ($email)
+		{
+			$message->from('info@dev.actingbio.com', 'ActingBio');
+
+			$message->to($email)->subject('Welcome!');
+		});
+
+		die(var_dump($result));*/
+
 		$this->display();
 	}
 
@@ -95,6 +106,8 @@ class HomeController extends ApplicationController
 
 	public function newsletter_submit()
 	{
+		global $env;
+
 		if ( !$this->is_ajax || !($post = Input::all()) )
 		{
 			return;
@@ -114,6 +127,17 @@ class HomeController extends ApplicationController
 		if ( User::where('email', '=', $email)->count() === 0 )
 		{
 			User::register($email, str_random(8), '', '');
+		}
+
+		// Send e-mail
+		if ( $env !== 'local' )
+		{
+			Mail::send('emails.welcome_beta', array(), function($message) use ($email)
+			{
+				$message->from('noreply@actingbio.com', 'ActingBio');
+
+				$message->to($email)->subject('Thank you for signing up for our BETA!');
+			});
 		}
 
 		$ajax->output();

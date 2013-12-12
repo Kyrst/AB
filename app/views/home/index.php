@@ -58,17 +58,17 @@
 		<form action="<?= URL::route('home') ?>" method="post" id="newsletter_form">
 			<div id="newsletter_email_container" class="row">
 				<div class="col-lg-6">
-					<input type="text" name="email" id="newsletter_email" placeholder="Enter your e-mail..." class="form-control">
+					<div class="input-group">
+						<input type="text" name="email" id="newsletter_email" placeholder="Enter your e-mail..." class="form-control">
+
+						<span class="input-group-btn">
+						  <button id="newsletter_email_button" class="btn btn-default" type="button">GO</button>
+						</span>
+					</div>
 				</div>
 			</div>
 
 			<p id="sign_up_description" style="margin: 0 auto;text-align: center">ENTER YOUR E-MAIL TO SECURE YOUR BETA ACCOUNT NOW</p>
-
-			<div class="row">
-				<div class="col-lg-6">
-					<a href="javascript:" id="newsletter_submit" class="btn btn-default">Sign Up</a>
-				</div>
-			</div>
 		</form>
 	</div>
 
