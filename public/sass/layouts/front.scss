@@ -1,0 +1,147 @@
+@font-face
+{
+	font-family: 'Questrial';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Questrial'), local('Questrial-Regular'), url(http://themes.googleusercontent.com/static/fonts/questrial/v3/MYWJ4lYm5dbZ1UBuYox79D8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+html
+{
+	//overflow-y: scroll; // Can't have overflow-y here because Bootbox makes a double vertical scroll if so :-((
+}
+
+html, html a
+{
+	-webkit-font-smoothing: antialiased !important;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .004);
+}
+
+html, body
+{
+	height: 100%;
+}
+
+body
+{
+	margin: 0;
+}
+
+#nav
+{
+	height: 104px;
+	background: #FFF;
+	border: none;
+	border-bottom: 1px solid #CCC;
+	margin: 0;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+#user_nav
+{
+	float: right;
+	width: 264px;
+	height: 70px;
+	margin-top: 32px;
+  	background: url(../../images/user_nav.png) no-repeat;
+}
+
+#user_nav a
+{
+	display: inline-block;
+  	width: 120px;
+	height: 62px;
+	text-indent: -9999px;
+	margin-top: 8px;
+}
+
+#user_nav #sign_up
+{
+	//background: rgba(255, 0, 255, .3);
+  	margin-left: 10px;
+}
+
+#user_nav #login
+{
+	//background: rgba(255, 255, 0, .3);
+	//background-position: -132px 0;
+}
+
+#logo
+{
+	padding: 0;
+}
+
+#main
+{
+	min-height: 500px;
+	min-height: 614px;
+}
+
+// Footer
+#footer
+{
+	height: 236px;
+	border-top: 4px solid #A7A9AC;
+	text-align: center;
+	background: #DEDEDE url(../../images/footer_logo.png)  no-repeat 50% 85px;
+}
+
+#footer_border
+{
+	background-color: #DEDEDE;
+	border-bottom: 1px solid #A7A9AC;
+	margin-top: 2px;
+}
+
+#footer_menu
+{
+	list-style-type: none;
+	font-family: "Times New Roman";
+	text-transform: uppercase;
+	margin-top: 23px;
+}
+
+#footer_menu li
+{
+	display: inline;
+	margin-right: 36px;
+	font-size: 1.2em;
+}
+
+#footer_menu a
+{
+	color: #17191A;
+	text-shadow: 0 1px #FFF;
+}
+
+@media only screen and (max-width: 226px)
+{
+	#logo
+	{
+  	position: fixed;
+	}
+
+	#collapsable_nav
+	{
+  		margin-top: 52px
+	}
+}
+
+// Bootbox Tricks
+.modal
+{
+	outline: none;
+	top: 15%;
+	overflow: visible; /* allow content to popup out (i.e tooltips) */
+}
+
+/*.modal-backdrop,
+.modal-backdrop.fade.in
+{
+	opacity: .7;
+	filter: alpha(opacity=70);
+	background: #00000;
+}*/
