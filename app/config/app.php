@@ -114,9 +114,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-		'Toddish\Verify\VerifyServiceProvider',
-
-		'Kyrst\Base\BaseServiceProvider'
+		'Toddish\Verify\VerifyServiceProvider'
 	),
 
 	/*
