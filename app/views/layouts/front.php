@@ -40,7 +40,7 @@
 			<div id="footer_border"></div>
 
 			<div class="container">
-				<ul id="footer_menu">
+				<?php /*<ul id="footer_menu">
 					<li><a href="/">About</a></li>
 					<li><a href="/">Pricing</a></li>
 					<li><a href="/">Blog</a></li>
@@ -49,7 +49,7 @@
 					<li><a href="/">Privacy</a></li>
 					<li><a href="/">Twitter</a></li>
 					<li><a href="/">Facebook</a></li>
-				</ul>
+				</ul>*/ ?>
 			</div>
 		</div>
 
