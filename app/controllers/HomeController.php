@@ -134,16 +134,16 @@ class HomeController extends ApplicationController
 		{
 			try
 			{
-			$result = Mail::send('emails.welcome_beta', array(), function($message) use ($email)
-			{
-				$message->from('noreply@actingbio.com', 'ActingBio');
+				$result = Mail::send('emails.welcome_beta', array(), function($message) use ($email)
+				{
+					$message->from('noreply@actingbio.com', 'ActingBio');
 
-				$message->to($email)->subject('Thank you for signing up for our BETA!');
-			});
+					$message->to($email)->subject('Thank you for signing up for our BETA!');
+				});
 			}
 			catch ( Swift_TransportException $e )
 			{
-				error_log($e->getMessage());
+				$result = $e->getMessage();
 			}
 
 			ob_start();
