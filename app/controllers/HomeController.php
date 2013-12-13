@@ -132,12 +132,18 @@ class HomeController extends ApplicationController
 		// Send e-mail
 		if ( $env !== 'local' )
 		{
-			Mail::send('emails.welcome_beta', array(), function($message) use ($email)
+			$result = Mail::send('emails.welcome_beta', array(), function($message) use ($email)
 			{
 				$message->from('noreply@actingbio.com', 'ActingBio');
 
 				$message->to($email)->subject('Thank you for signing up for our BETA!');
 			});
+
+			ob_start();
+			var_dump($email . ' signed up for BETA. Mail result: ' . $result);
+			$contents = ob_get_contents();
+			ob_end_clean();
+			error_log($contents);
 		}
 
 		$ajax->output();

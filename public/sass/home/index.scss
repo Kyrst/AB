@@ -17,6 +17,15 @@ $start_here_width: 645px;
 	border-bottom: 1px solid #CCC;
 }
 
+#start_here_button
+{
+	display: block;
+	width: 258px;
+	height: 76px;
+	background: url('../../images/home/index/start_here_button.png') no-repeat;
+	margin: 230px auto 0;
+}
+
 #index_content
 {
 	padding-bottom: 60px
@@ -150,7 +159,7 @@ $start_here_width: 645px;
 	margin: 0 auto;
 	width: 277px;
 	height: 229px;
-	background: url('../../images/home/index/emblem.png') no-repeat 0 100px;
+	background: url('../../images/home/index/emblem.png') no-repeat 0 70px;
 }
 
 #newsletter_container, #newsletter_submitted
@@ -169,6 +178,7 @@ $start_here_width: 645px;
 	font-family: 'Questrial';
 	font-size: 1.6em;
 	letter-spacing: 1px;
+	margin-top: 0;
 }
 
 #newsletter_form

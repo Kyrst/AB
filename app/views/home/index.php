@@ -1,6 +1,8 @@
 <!-- Splash -->
 <div id="splash">
-	<div class="container"></div>
+	<div class="container">
+		<a href="javascript:" id="start_here_button"></a>
+	</div>
 </div>
 
 <div id="index_content" class="container">

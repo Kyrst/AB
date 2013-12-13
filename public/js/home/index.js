@@ -1,9 +1,13 @@
 var $newsletter_email, $newsletter_email_button;
 
+var emblem_offset_top;
+
 $(function()
 {
 	$newsletter_email = $('#newsletter_email');
 	$newsletter_email_button = $('#newsletter_email_button');
+
+	emblem_offset_top = $('#emblem').offset().top;
 
 	/*$newsletter_email.on('keypress', function()
 	{
@@ -25,6 +29,14 @@ $(function()
 		submit_newsletter();
 
 		return false;
+	});
+
+	$('#start_here_button').on('click', function()
+	{
+		$('html, body').animate(
+		{
+			scrollTop: emblem_offset_top
+		}, 1000);
 	});
 });
 
