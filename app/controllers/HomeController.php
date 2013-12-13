@@ -146,11 +146,7 @@ class HomeController extends ApplicationController
 				$result = $e->getMessage();
 			}
 
-			ob_start();
-			var_dump($result);
-			$contents = ob_get_contents();
-			ob_end_clean();
-			error_log($contents);
+			error_log($email . ' signed up for BETA. Mail result: ' . ($result === 1 ? 'OK' : 'Fail') . ' (' . (string)$result . ')');
 		}
 
 		$ajax->output();
