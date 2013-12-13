@@ -147,7 +147,7 @@ class HomeController extends ApplicationController
 			}
 
 			ob_start();
-			var_dump($email . ' signed up for BETA. Mail result: ' . $result);
+			var_dump($result);
 			$contents = ob_get_contents();
 			ob_end_clean();
 			error_log($contents);
