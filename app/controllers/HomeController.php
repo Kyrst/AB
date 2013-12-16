@@ -1,11 +1,25 @@
 <?php
 use Kyrst\Base\Helpers\Ajax as Ajax;
 use Kyrst\Base\Helpers\Notice as Notice;
+use Kyrst\Base\Helpers\Email as Email;
 
 class HomeController extends ApplicationController
 {
 	public function index()
 	{
+		/*$content = Email::render
+		(
+			'welcome_beta',
+			array
+			(
+				'code' => 'yoyo mama :-)'
+			)
+		);
+
+		die($content);*/
+
+		//User::register('dennis@actingbio.com', 'dennis', 'p3edz9', 'Dennis', 'Nygren', '1987-11-05');
+
 		/*$email = 'nygganh@nygganh.se';
 
 		$result = Mail::send('emails.welcome_beta', array(), function($message) use ($email)
@@ -40,7 +54,7 @@ class HomeController extends ApplicationController
 
 			if ( $validation->fails() )
 			{
-				$ajax->set_validation($validation);
+				//$ajax->set_validation($validation);
 			}
 
 			try
@@ -54,6 +68,8 @@ class HomeController extends ApplicationController
 					),
 					true
 				);
+
+				$this->ajax->redirect(URL::route('dashboard'));
 			}
 			catch ( Exception $e )
 			{
@@ -96,12 +112,26 @@ class HomeController extends ApplicationController
 
 			$this->user = User::register($post['email'], $post['alias'], $post['password'], $post['first_name'], $post['last_name'], $post['birthdate']);
 
-			$ajax->redirect(URL::route('dashboard'));
+			$result = Email::send
+			(
+				'welcome_beta',
+				'Welcome to ActingBio!',
+				$this->user->email,
+				array
+				(
+					'email' => 'info@actingbio.com',
+					'name' => 'ActingBio'
+				),
+				array
+				(
+					'code' => $this->user->code
+				)
+			);
 
 			$ajax->output();
 		}
 
-		$this->display('Sign Up for Acting Bio', false, array('bootstrap-datepicker'));
+		$this->display(NULL, 'Sign Up for Acting Bio', false, array('bootstrap-datepicker'));
 	}
 
 	public function newsletter_submit()
@@ -124,30 +154,42 @@ class HomeController extends ApplicationController
 		$email = trim($post['email']);
 
 		// Only add if it hasn't been added already
-		if ( User::where('email', '=', $email)->count() === 0 )
+		$result_user = User::where('email', '=', $email);
+
+		if ( $result_user->count() === 0 )
 		{
-			User::register($email, str_random(8), '', '');
+			$user = User::register($email, str_random(8), '', '');
+		}
+		else
+		{
+			$user = $result_user->firstOrFail();
 		}
 
 		// Send e-mail
-		if ( $env !== 'local' )
+		try
 		{
-			try
-			{
-				$result = Mail::send('emails.welcome_beta', array(), function($message) use ($email)
-				{
-					$message->from('noreply@actingbio.com', 'ActingBio');
-
-					$message->to($email)->subject('Thank you for signing up for our BETA!');
-				});
-			}
-			catch ( Swift_TransportException $e )
-			{
-				$result = $e->getMessage();
-			}
-
-			error_log($email . ' signed up for BETA. Mail result: ' . ($result === 1 ? 'OK' : 'Fail') . ' (' . (string)$result . ')');
+			$result = Email::send
+			(
+				'welcome_beta',
+				'Welcome to ActingBio!',
+				$user->email,
+				array
+				(
+					'email' => 'info@actingbio.com',
+					'name' => 'ActingBio'
+				),
+				array
+				(
+					'code' => $user->code
+				)
+			);
 		}
+		catch ( Swift_TransportException $e )
+		{
+			$result = $e->getMessage();
+		}
+
+		error_log($email . ' signed up for BETA. Mail result: ' . ($result === 1 ? 'OK' : 'Fail') . ' (' . (string)$result . ')');
 
 		$ajax->output();
 	}

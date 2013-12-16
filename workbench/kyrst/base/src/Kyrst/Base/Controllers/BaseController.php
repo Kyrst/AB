@@ -133,7 +133,7 @@ class BaseController extends \Controller
 		$this->loaded_libs[$pre_loaded ? 'pre_loaded' : 'user_loaded'][] = $lib_name;
 	}
 
-	public function display($page_title = '', $page_title_appendix = true, $libs_to_load = array())
+	public function display($view_file = NULL, $page_title = '', $page_title_appendix = true, $libs_to_load = array())
 	{
 		$this->layout->page_title = ($page_title !== '') ? $page_title . ($page_title_appendix ? ' ' . PAGE_TITLE_SEPARATOR . ' ' . PAGE_TITLE_APPENDIX : '') : DEFAULT_PAGE_TITLE;
 
@@ -242,7 +242,14 @@ class BaseController extends \Controller
 		);
 
 		// Automatically detect content view
-		$route = $controller . '/' . $action;
+		if ( $view_file !== NULL )
+		{
+			$route = $view_file;
+		}
+		else
+		{
+			$route = $controller . '/' . $action;
+		}
 
 		/*if ( $route === '' )
 		{
@@ -277,7 +284,7 @@ class BaseController extends \Controller
 		return $current_page;
 	}
 
-	protected function getDBQueries()
+	protected function get_db_queries()
 	{
 		return DB::getQueryLog();
 	}

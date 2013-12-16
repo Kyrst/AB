@@ -48,3 +48,18 @@ Route::get('/dashboard', array
 	'uses' => 'DashboardController@index',
 	'as' => 'dashboard'
 ));
+
+// E-mail
+Route::get('/email/{name}', array
+(
+	'uses' => 'EmailController@view'
+))->where('name', '[a-z0-9_]+');
+
+Event::listen('illuminate.query', function($query)
+{
+	if ( app()->environment() === 'local' && Input::get('profiler') )
+	{
+		echo $query, '<hr>';
+		exit;
+	}
+});
