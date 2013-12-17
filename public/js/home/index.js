@@ -36,7 +36,10 @@ $(function()
 		$('html, body').animate(
 		{
 			scrollTop: emblem_offset_top
-		}, 1000);
+		}, 1000, function()
+		{
+			$newsletter_email.focus();
+		});
 	});
 });
 
