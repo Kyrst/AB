@@ -7,7 +7,7 @@ class HomeController extends ApplicationController
 {
 	public function index()
 	{
-		$content = Email::render
+		/*$content = Email::render
 		(
 			'welcome_beta',
 			array
@@ -16,7 +16,7 @@ class HomeController extends ApplicationController
 			)
 		);
 
-		die($content);
+		die($content);*/
 
 		//User::register('dennis@actingbio.com', 'dennis', 'p3edz9', 'Dennis', 'Nygren', '1987-11-05');
 
