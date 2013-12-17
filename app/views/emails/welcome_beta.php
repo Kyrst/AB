@@ -3,7 +3,7 @@
 		<td align="center">
 			<table width="600" border="0" cellspacing="0" cellpadding="0" style="text-align:center;background:#FFF;border:1px solid #CDCDCD;margin-top:20px;height:780px">
 				<tr>
-					<td style="font-size:13px;vertical-align:top;box-shadow:0 0 8px rgba(0, 0, 0, .15);padding-top:15px" valign="top">
+					<td style="font-size:13px;vertical-align:top;box-shadow:0 0 8px rgba(0, 0, 0, .15);padding-top:20px" valign="top">
 						<img src="<?= asset('images/logo.png') ?>" width="149" height="102" alt="">
 
 						<br>
@@ -26,7 +26,7 @@
 							</p>
 						</div>
 
-						<div style="margin:25px 35px 100px 0;font:normal 16px Times new roman;color:#84949F;text-align:right">
+						<div style="margin:25px 35px 85px 0;font:normal 16px Times new roman;color:#84949F;text-align:right">
 							Sincerely,
 							<br>
 							<br>
