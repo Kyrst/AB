@@ -36,19 +36,12 @@ $(function()
 		$('html, body').animate(
 		{
 			scrollTop: emblem_offset_top
-		}, 1000);
-	});
-
-	$('#start_here_button').on('mouseup', function()
-	{
-		setTimeout
-		(
-			function()
-			{
-				$('#newsletter_email').focus();
-			},
-			1500
-		);
+		},
+		1000,
+		function()
+		{
+			$newsletter_email.focus();
+		});
 	});
 });
 
