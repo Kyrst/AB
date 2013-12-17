@@ -20,9 +20,9 @@ $font_family = 'Helvetica, Arial, sans-serif';
 			}
 		</style>
 	</head>
-	<body bgcolor="<?= $background_color ?>" alink="<?= $fore_color ?>" link="<?= $fore_color ?>" text="<?= $fore_color ?>" style="background:<?= $background_color ?>;min-height:1000px;color:<?= $fore_color ?>;font-family:<?= $font_family ?>;font-size:12px;">
-		<span id="body_style" style="display:block;padding:15px;background:<?= $background_color ?>">
+	<body bgcolor="<?= $background_color ?>" alink="<?= $fore_color ?>111" link="<?= $fore_color ?>111" text="<?= $fore_color ?>111" style="background:<?= $background_color ?>;min-height:1000px;color:<?= $fore_color ?>;font-family:<?= $font_family ?>;font-size:12px;">
+		<div id="body_style" style="display:block;padding:15px;background:<?= $background_color ?>">
 			<?= $content ?>
-		</span>
+		</div>
 	</body>
 </html>

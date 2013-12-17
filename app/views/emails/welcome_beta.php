@@ -1,14 +1,14 @@
-<table bgcolor="<?= $background_color ?>" width="100%" border="0" cellspacing="0" cellpadding="0" style="padding:15px 0 35px">
+<table bgcolor="<?= $background_color ?>" width="100%" border="0" cellspacing="0" cellpadding="0" style="padding:15px 0 35px;height:100%">
 	<tr>
 		<td align="center">
-			<table width="600" height="780" border="0" cellspacing="0" cellpadding="0" style="text-align:center;background:#FFF;border:1px solid #CDCDCD;margin-top:20px">
+			<table width="600" border="0" cellspacing="0" cellpadding="0" style="text-align:center;background:#FFF;border:1px solid #CDCDCD;margin-top:20px;height:100%">
 				<tr>
 					<td style="font-size:13px;vertical-align:top;box-shadow:0 0 8px rgba(0, 0, 0, .15)" valign="top">
-						<img src="<?= asset('images/logo.png') ?>">
+						<img src="<?= asset('images/logo.png') ?>" width="149" height="102" alt="">
 
 						<br>
 
-						<img src="<?= asset('images/emails/header.png') ?>">
+						<img src="<?= asset('images/emails/header.png') ?>" width="600" height="98" alt="">
 
 						<h1 style="font:normal 17px Arial;color:#A37E2C;margin-top:25px">WELCOME!</h1>
 
@@ -33,7 +33,7 @@
 							The ActingBio Team
 						</div>
 
-						<img src="<?= asset('images/emails/footer.png') ?>">
+						<img src="<?= asset('images/emails/footer.png') ?>" width="600" height="54" alt="">
 					</td>
 				</tr>
 			</table>
