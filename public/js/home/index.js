@@ -45,9 +45,9 @@ $(function()
 		(
 			function()
 			{
-				$newsletter_email.focus();
+				$('#newsletter_email').focus();
 			},
-			1005
+			1500
 		);
 	});
 });
