@@ -1,4 +1,4 @@
-<table bgcolor="<?= $background_color ?>" width="100%" border="0" cellspacing="0" cellpadding="0" style="padding:35px 0">
+<table bgcolor="<?= $background_color ?>" width="100%" border="0" cellspacing="0" cellpadding="0" style="padding:20px 0 35px">
 	<tr>
 		<td align="center">
 			<table width="600" height="780" border="0" cellspacing="0" cellpadding="0" style="text-align:center;background:#FFF;border:1px solid #CDCDCD;margin-top:20px">
