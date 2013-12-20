@@ -7,6 +7,9 @@
 		<title><?= $page_title; ?></title>
 		<meta name="description" content="">
 
+		<link rel="shortcut icon" href="<?= URL::to('favicon.ico') ?>">
+		<link rel="apple-itouch-icon" href="<?= URL::to('favicon.png') ?>">
+
 		<?php foreach ( $assets['css'] as $css ): ?>
 			<link href="<?= URL::route('home', array(), false) . $css['file'] ?>" rel="stylesheet">
 		<?php endforeach; ?>

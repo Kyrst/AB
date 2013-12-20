@@ -75,6 +75,11 @@ function submit_newsletter()
 						$('#newsletter_submitted').fadeIn();
 					});
 				}
+				else
+				{
+					$newsletter_email.prop('disabled', false);
+					$newsletter_email_button.prop('disabled', false);
+				}
 			},
 			complete: function()
 			{
