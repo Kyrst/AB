@@ -60,5 +60,3 @@ $app->run();
 */
 
 $app->shutdown();
-
-die('test'); // Test
