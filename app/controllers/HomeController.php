@@ -31,6 +31,8 @@ class HomeController extends ApplicationController
 
 		die(var_dump($result));*/
 
+		$this->load_lib('jquery-lazyload');
+
 		$this->display();
 	}
 

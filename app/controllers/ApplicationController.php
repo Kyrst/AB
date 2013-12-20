@@ -14,6 +14,10 @@ class ApplicationController extends BaseController
 			'css' => 'libs/jquery_ui/jquery-ui.css',
 			'js' => 'libs/jquery_ui/jquery-ui.js'
 		),
+		'jquery-lazyload' => array
+		(
+			'js' => 'libs/jquery_lazyload/jquery.lazyload.min.js'
+		),
 		'bootstrap' => array
 		(
 			'css' => 'libs/bootstrap/css/bootstrap.css',

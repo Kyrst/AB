@@ -43,6 +43,8 @@ $(function()
 			$newsletter_email.focus();
 		});
 	});
+
+	$('#content').find('img.lazy').lazyload();
 });
 
 function submit_newsletter()

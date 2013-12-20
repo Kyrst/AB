@@ -31,7 +31,7 @@
 		<img src="<?= asset('images/home/index/step_2.png') ?>" id="step_2_image" width="294" height="294" class="steps-item">
 
 		<!-- Step 3 -->
-		<img src="<?= asset('images/home/index/step_3.png') ?>" id="step_3_image" width="294" height="294" class="steps-item">
+		<img data-original="<?= asset('images/home/index/step_3.png') ?>" id="step_3_image" width="294" height="294" class="steps-item lazy">
 
 		<div id="step_3_text" class="steps-item">
 			<span class="heading"><span class="number">3.</span> Analyze and track your progress</span>
