@@ -10,10 +10,10 @@
 	<div id="steps_container">
 		<div id="steps_middle_bar" class="steps-item"></div>
 
-		<img src="<?= asset('images/home/index/circle_start.png') ?>" id="circle_start" class="steps-item">
+		<img src="<?= asset('images/home/index/circle_start.png') ?>" id="circle_start" width="110" height="109" class="steps-item">
 
 		<!-- Step 1 -->
-		<img src="<?= asset('images/home/index/step_1.png') ?>" id="step_1_image" class="steps-item">
+		<img src="<?= asset('images/home/index/step_1.png') ?>" id="step_1_image" width="294" height="294" class="steps-item">
 
 		<div id="step_1_text" class="steps-item">
 			<span class="heading"><span class="number">1.</span> Set up Acting Bio in minutes</span>
@@ -28,10 +28,10 @@
 			<p>The technical aspect should get in your path to become the great actor that you want, that’s why we made it easy to update and upload photos, videos and new content to enhance your bio. From desktop to mobile, updating your actingbio should be a matter of minutes, so that you can share your most up-to-date and acurate data ever.</p>
 		</div>
 
-		<img src="<?= asset('images/home/index/step_2.png') ?>" id="step_2_image" class="steps-item">
+		<img src="<?= asset('images/home/index/step_2.png') ?>" id="step_2_image" width="294" height="294" class="steps-item">
 
 		<!-- Step 3 -->
-		<img src="<?= asset('images/home/index/step_3.png') ?>" id="step_3_image" class="steps-item">
+		<img src="<?= asset('images/home/index/step_3.png') ?>" id="step_3_image" width="294" height="294" class="steps-item">
 
 		<div id="step_3_text" class="steps-item">
 			<span class="heading"><span class="number">3.</span> Analyze and track your progress</span>
