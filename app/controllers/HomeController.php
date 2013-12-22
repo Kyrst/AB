@@ -71,7 +71,7 @@ class HomeController extends ApplicationController
 					true
 				);
 
-				$this->ajax->redirect(URL::route('dashboard'));
+				$ajax->redirect('dashboard');
 			}
 			catch ( Exception $e )
 			{
@@ -81,7 +81,7 @@ class HomeController extends ApplicationController
 			$ajax->output();
 		}
 
-		$this->display('Login to Acting Bio', false);
+		$this->display(NULL, 'Login to Acting Bio', false);
 	}
 
 	public function sign_up()
