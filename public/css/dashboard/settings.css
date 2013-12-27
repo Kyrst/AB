@@ -1,0 +1,13 @@
+#settings_saved_message, #profile_picture_upload_buttons_container, #crop_button, #cancel_crop_button {
+  display: none; }
+
+#profile_picture_upload_preview {
+  display: block;
+  margin-bottom: 10px; }
+
+#crop_button, #cancel_crop_button {
+  float: left;
+  margin-top: 8px; }
+
+#cancel_crop_button {
+  margin-left: 5px; }

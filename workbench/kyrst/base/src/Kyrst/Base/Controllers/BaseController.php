@@ -228,7 +228,10 @@ class BaseController extends \Controller
 
 		$this->layout->assets = $this->assets;
 
-		$this->layout->js_vars = $this->data['js'];
+		$js_vars_view = \View::make('base::layouts/partials/js_vars');
+		$js_vars_view->js_vars = $this->data['js'];
+
+		$this->layout->js_vars = $js_vars_view->render();//$this->data['js'];
 
 		foreach ( $this->data['layout'] as $key => $value )
 		{

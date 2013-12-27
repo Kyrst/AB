@@ -38,6 +38,11 @@ class HomeController extends ApplicationController
 
 	public function login()
 	{
+		if ( $this->user !== NULL )
+		{
+			return Redirect::route('dashboard');
+		}
+
 		if ( $this->is_ajax )
 		{
 			$post = Input::all();
@@ -84,8 +89,20 @@ class HomeController extends ApplicationController
 		$this->display(NULL, 'Login to Acting Bio', false);
 	}
 
+	public function log_out()
+	{
+		Auth::logout();
+
+		return Redirect::route('home');
+	}
+
 	public function sign_up()
 	{
+		if ( $this->user !== NULL )
+		{
+			return Redirect::route('dashboard');
+		}
+
 		if ( $this->is_ajax )
 		{
 			$post = Input::all();

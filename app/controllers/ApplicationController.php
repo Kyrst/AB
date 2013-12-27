@@ -52,17 +52,30 @@ class ApplicationController extends BaseController
 			'css' => array
 			(
 				'libs/mars-admin/html/assets/css/app.css'
+			),
+			'js' => array
+			(
+				'libs/mars-admin/html/assets/js/bootstrap/tab.js'
 			)
 		),
 		'kyrst' => array
 		(
+			'css' => array
+			(
+				'packages/kyrst/base/css/global.css'
+			),
 			'js' => array
 			(
-				'packages/kyrst/base/ajax_request.js',
-				'packages/kyrst/base/ajax.js',
-				'packages/kyrst/base/ui.js',
-				'packages/kyrst/base/kyrst.js'
+				'packages/kyrst/base/js/ajax_request.js',
+				'packages/kyrst/base/js/ajax.js',
+				'packages/kyrst/base/js/ui.js',
+				'packages/kyrst/base/js/kyrst.js'
 			)
+		),
+		'jcrop' => array
+		(
+			'css' => 'libs/jcrop/css/jquery.Jcrop.min.css',
+			'js' => 'libs/jcrop/js/jquery.Jcrop.min.js'
 		)
 	);
 
@@ -87,8 +100,5 @@ class ApplicationController extends BaseController
 
 		// Kyrst
 		$this->load_lib('kyrst');
-
-		// Username sub-domain
-		//$username = Session::get('username');
 	}
 }

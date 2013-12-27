@@ -1,20 +1,16 @@
-<ol class="breadcrumb">
-	<li><a href="<?= URL::route('dashboard' ) ?>">Dashboard</a></li>
-</ol>
+<div class="page-header">
+	<h1><i class="icon-bar-chart"></i> Dashboard</h1>
+</div>
 
 <div class="main-content">
 	<?php if ( $user->first_time === 'yes' ): ?>
 		<div class="widget">
 			<div class="alert alert-warning">
-				<h2>Welcome to Acting Bio, <?= $user->first_name ?>!</h2>
+				<h2>Hello <?= $user->first_name ?>, Welcome to Acting Bio!</h2>
 
-				<p>Please continue to create your profile.</p>
+				<p style="margin-bottom:10px">To get you started, go through these quick steps to setup your public profile.</p>
 
-				<form>
-
-				</form>
-
-				<p><a href="javascript:" class="btn btn-primary">Next Step</a></p>
+				<p><a href="javascript:" class="btn btn-primary">Continue</a></p>
 			</div>
 		</div>
 	<?php else: ?>

@@ -25,7 +25,7 @@
 						<span class="icon-bar"></span>
 					</button>
 
-					<a id="logo" class="navbar-brand" href="/"><img src="<?= asset('images/logo.png') ?>" width="149" height="102"></a>
+					<a id="logo" class="navbar-brand" href="/"><img src="<?= asset('images/logo.png') ?>" width="149" height="102" alt=""></a>
 				</div>
 
 				<?php /*<div id="user_nav">
@@ -35,26 +35,8 @@
 		</div>
 
 		<!-- Content -->
-		<div id="content">
+		<div id="content" class="container">
 			<?= $content ?>
-		</div>
-
-		<!-- Footer -->
-		<div id="footer">
-			<div id="footer_border"></div>
-
-			<div class="container">
-				<?php /*<ul id="footer_menu">
-					<li><a href="/">About</a></li>
-					<li><a href="/">Pricing</a></li>
-					<li><a href="/">Blog</a></li>
-					<li><a href="/">Help</a></li>
-					<li><a href="/">Contact</a></li>
-					<li><a href="/">Privacy</a></li>
-					<li><a href="/">Twitter</a></li>
-					<li><a href="/">Facebook</a></li>
-				</ul>*/ ?>
-			</div>
 		</div>
 
 		<?= $js_vars ?>

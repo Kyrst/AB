@@ -11,95 +11,93 @@
 		<?php endforeach; ?>
 	</head>
 	<body>
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-			ga('create', 'UA-42863888-3', 'pinsupreme.com');
-			ga('send', 'pageview');
-
-		</script>
-
 		<div class="all-wrapper">
-		<div class="row">
-		<div class="col-md-3">
-			<div class="text-center">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-			<div class="side-bar-wrapper collapse navbar-collapse navbar-ex1-collapse">
-				<a href="#" class="logo hidden-sm hidden-xs">
-					<i class="icon-cloud-download"></i>
-					<span><?= $user->get_name() ?></span>
-				</a>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="text-center">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
 
-				<?php /*<div class="search-box">
-					<input type="text" placeholder="SEARCH" class="form-control">
-				</div>*/ ?>
+					<div class="side-bar-wrapper collapse navbar-collapse navbar-ex1-collapse">
+						<div class="logo hidden-sm hidden-xs">
+							<i class="icon-cloud-download"></i>
 
-				<?php /*<ul class="side-menu">
-					<li>
-						<a href="notifications.html">
-							<span class="badge badge-notifications pull-right alert-animated">5</span>
-							<i class="icon-flag"></i> Notifications
-						</a>
-					</li>
-				</ul>*/ ?>
+							<span id="user_name"><?= $user->get_name() ?></span>
 
-				<div class="relative-w">
-					<ul class="side-menu">
-						<!-- Dashboard -->
-						<li class="current">
-							<a class="current" href="index.html">
-								<span class="badge pull-right">17</span>
-								<i class="icon-dashboard"></i> Dashboard
-							</a>
-						</li>
+							<?php if ( $user->avatar === 'yes' ): ?>
+								<a href="<?= URL::route('dashboard/settings') ?>"><?= $user->get_profile_picture_image('dashboard', 'dashboard_profile_picture') ?></a>
+							<?php endif ?>
+						</div>
 
-						<!-- Profile -->
-						<li>
-							<a href="/">
-								<i class="icon-terminal"></i> Profile
-							</a>
-						</li>
+						<?php /*<div class="search-box">
+							<input type="text" placeholder="SEARCH" class="form-control">
+						</div>*/ ?>
 
-						<!-- Profile -->
-						<li>
-							<a href="/">
-								<i class="icon-cog"></i> Settings
-							</a>
-						</li>
+						<?php /*<ul class="side-menu">
+							<li>
+								<a href="notifications.html">
+									<span class="badge badge-notifications pull-right alert-animated">5</span>
+									<i class="icon-flag"></i> Notifications
+								</a>
+							</li>
+						</ul>*/ ?>
 
-						<!-- Settings -->
-						<li>
-							<a href="/">
-								<i class="icon-terminal"></i> Log Out
-							</a>
-						</li>
-					</ul>
+						<div class="relative-w">
+							<ul class="side-menu">
+								<!-- Dashboard -->
+								<li<?php if ( $current_page === 'dashboard/index' ): ?> class="current"<?php endif ?>>
+									<a href="<?= URL::route('dashboard') ?>" class="current">
+										<i class="icon-dashboard"></i> Dashboard
+									</a>
+								</li>
+
+								<!-- Profile -->
+								<li<?php if ( $current_page === 'dashboard/inbox' ): ?> class="current"<?php endif ?>>
+									<a href="<?= URL::route('dashboard/inbox') ?>">
+										<span class="badge pull-right">17</span>
+										<i class="icon-email"></i> Inbox
+									</a>
+								</li>
+
+								<!-- Profile -->
+								<li>
+									<a href="<?= $user->get_profile_url() ?>">
+										<i class="icon-terminal"></i> Profile
+									</a>
+								</li>
+
+								<!-- Profile -->
+								<li<?php if ( $current_page === 'dashboard/settings' ): ?> class="current"<?php endif ?>>
+									<a href="<?= URL::route('dashboard/settings') ?>">
+										<i class="icon-cog"></i> Settings
+									</a>
+								</li>
+
+								<!-- Settings -->
+								<li>
+									<a href="<?= URL::route('log-out') ?>">
+										<i class="icon-terminal"></i> Log Out
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9">
+
+				<div class="content-wrapper wood-wrapper">
+					<div class="content-inner">
+						<?= $content ?>
+					</div>
+				</div>
+
 				</div>
 			</div>
-		</div>
-		<div class="col-md-9">
-
-		<div class="content-wrapper wood-wrapper">
-			<div class="content-inner">
-				<div class="page-header">
-					<h1><i class="icon-bar-chart"></i> Dashboard</h1>
-				</div>
-
-				<?= $content ?>
-			</div>
-		</div>
-
-		</div>
-		</div>
 		</div>
 
 
@@ -147,24 +145,10 @@
 			</div>
 		</div>*/ ?>
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-		<script src="assets/js/jquery.sparkline.min.js"></script>
-		<script src="assets/js/bootstrap/tab.js"></script>
-		<script src="assets/js/bootstrap/dropdown.js"></script>
-		<script src="assets/js/bootstrap/collapse.js"></script>
-		<script src="assets/js/bootstrap/transition.js"></script>
-		<script src="assets/js/bootstrap/tooltip.js"></script>
-		<script src="assets/js/jquery.knob.js"></script>
-		<script src="assets/js/fullcalendar.min.js"></script>
-		<script src="assets/js/datatables/datatables.min.js"></script>
-		<script src="assets/js/chosen.jquery.min.js"></script>
-		<script src="assets/js/datatables/bootstrap.datatables.js"></script>
-		<script src="assets/js/raphael-min.js"></script>
-		<script src="assets/js/morris-0.4.3.min.js"></script>
-		<script src="assets/js/for_pages/color_settings.js"></script>
-		<script src="assets/js/application.js"></script>
+		<?= $js_vars ?>
 
-		<script src="assets/js/for_pages/dashboard.js"></script>
+		<?php foreach ( $assets['js'] as $file ): ?>
+			<script src="<?= URL::route('home', array(), false) . $file ?>"></script>
+		<?php endforeach; ?>
 	</body>
 </html>

@@ -25,6 +25,13 @@ Route::get('/login', array
 	'as' => 'login'
 ));
 
+// Log out
+Route::get('/log-out', array
+(
+	'uses' => 'HomeController@log_out',
+	'as' => 'log-out'
+));
+
 Route::post('/login', array
 (
 	'uses' => 'HomeController@login'
@@ -49,6 +56,26 @@ Route::get('/dashboard', array
 	'as' => 'dashboard'
 ));
 
+// Dashboard: Inbox
+Route::get('/dashboard/inbox', array
+(
+	'uses' => 'DashboardController@inbox',
+	'as' => 'dashboard/inbox'
+));
+
+// Dashboard: Settings
+Route::get('/dashboard/settings', array
+(
+	'uses' => 'DashboardController@settings',
+	'as' => 'dashboard/settings'
+));
+
+// Dashboard: Settings (POST)
+Route::post('/dashboard/settings', array
+(
+	'uses' => 'DashboardController@settings'
+));
+
 // E-mail
 Route::get('/email/{name}', array
 (
@@ -63,3 +90,21 @@ Event::listen('illuminate.query', function($query)
 		exit;
 	}
 });
+
+// Public profile page
+Route::get('/profile/{username}', array
+(
+	'uses' => 'ProfileController@public_profile'
+))->where('username', '[a-z0-9_\-]+');
+
+// User profile picture
+Route::get('/profile-picture/{id}/{size_name}', array
+(
+	'uses' => 'ImageController@profile_picture'
+))->where(array('id', '\d+'), array('size_name', '[a-z0-9_\-]+'));
+
+// Crop profile picture (POST)
+Route::post('/crop-profile-picture', array
+(
+	'uses' => 'ImageController@crop_profile_picture'
+));

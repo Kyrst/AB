@@ -1,6 +1,9 @@
-<?php namespace Kyrst\Base;
+<?php
+namespace Kyrst\Base;
 
+use App;
 use Illuminate\Support\ServiceProvider;
+use Artisan;
 
 class BaseServiceProvider extends ServiceProvider {
 
@@ -19,6 +22,8 @@ class BaseServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('kyrst/base');
+
+		$app = $this->app;
 	}
 
 	/**
@@ -28,7 +33,10 @@ class BaseServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		$this->app['base'] = $this->app->share(function($app)
+		{
+			return new Base;
+		});
 	}
 
 	/**
