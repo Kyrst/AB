@@ -28,6 +28,11 @@ class ApplicationController extends BaseController
 			'css' => 'libs/bootstrap-datepicker/css/datepicker.css',
 			'js' => 'libs/bootstrap-datepicker/js/bootstrap-datepicker.js'
 		),
+		'bootstrap-wysiwyg' => array
+		(
+			'css' => 'libs/bootstrap-wysiwyg/index.css',
+			'js' => 'libs/bootstrap-wysiwyg/bootstrap-wysiwyg.js'
+		),
 		'bootbox' => array
 		(
 			'js' => 'libs/bootbox/bootbox.js'
@@ -76,6 +81,11 @@ class ApplicationController extends BaseController
 		(
 			'css' => 'libs/jcrop/css/jquery.Jcrop.min.css',
 			'js' => 'libs/jcrop/js/jquery.Jcrop.min.js'
+		),
+		'jquery-tagsinput' => array
+		(
+			'css' => 'libs/jquery-tagsinput/jquery.tagsinput.css',
+			'js' => 'libs/jquery-tagsinput/jquery.tagsinput.js'
 		)
 	);
 

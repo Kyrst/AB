@@ -20,7 +20,7 @@ class User extends VerifyUser
 		$user->code = self::generate_code();
 		$user->first_name = trim($first_name);
 		$user->last_name = trim($last_name);
-		$user->birthdate = trim(date(Time::ISO_DATE_FORMAT, strtotime($birthdate)));
+		$user->birthdate = $birthdate !== NULL ? trim(date(Time::ISO_DATE_FORMAT, strtotime($birthdate))) : NULL;
 		$user->verified = 1;
 		$user->created_at = date(Time::ISO_DATE_FORMAT);
 		$user->save();

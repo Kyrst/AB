@@ -666,7 +666,7 @@ ui.prototype =
 
 			button.set_title = function(title, disable)
 			{
-				$(this.selector).text(title);
+				$(this.selector).text('title');
 
 				this.selector = '.ui-dialog-buttonpane button:contains(' + title + ')';
 

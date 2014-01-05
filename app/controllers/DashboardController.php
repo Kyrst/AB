@@ -99,4 +99,87 @@ class DashboardController extends ApplicationController
 	{
 		$this->display();
 	}
+
+	public function work_experience()
+	{
+		$this->display
+		(
+			NULL,
+			'Work Experience',
+			true,
+			array
+			(
+				'jquery-ui',
+				'jquery-tagsinput',
+				'bootstrap-wysiwyg'
+			)
+		);
+	}
+
+	public function save_personal_statement()
+	{
+		$ajax = new Ajax($this->notice);
+
+		$input = Input::all();
+
+		$this->user->personal_statement = $input['personal_statement'];
+		$this->user->save();
+
+		$ajax->output();
+	}
+
+	public function get_personal_statement()
+	{
+		$ajax = new Ajax($this->notice);
+
+		$ajax->add_data('personal_statement', $this->user->print_personal_statement());
+
+		$ajax->output();
+	}
+
+	public function get_autocomplete_languages()
+	{
+		$input = Input::all();
+
+		$term = $input['term'];
+
+		$data = array
+		(
+			'name' => 'Dummy',
+			'size' => 'XL',
+			'color' => 'Blue'
+		);
+
+		return Response::json($data);
+	}
+
+	public function save_autocomplete_language()
+	{
+		$result = array
+		(
+			'error' => '',
+			'data' => array
+			(
+				'already_existed' => true
+			)
+		);
+
+		$input = Input::all();
+
+		$value = trim($input['value']);
+
+		// Check if exists in database
+		$exists = (Language::where('name', $value)->count() === 1);
+
+		if ( !$exists )
+		{
+			$language = new Language();
+			$language->name = $value;
+			$language->save();
+
+			$result['already_existed'] = false;
+		}
+
+		return Response::json(array());
+	}
 }

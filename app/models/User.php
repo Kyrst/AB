@@ -51,6 +51,7 @@ class User extends KyrstUser
 	public static function get_profile_picture($user_id)
 	{
 		$dir = self::get_profile_picture_dir($user_id);
+
 		$new_file = $dir . 'new.jpg';
 
 		return $dir . (file_exists($new_file) ? 'new.jpg' : 'original.jpg');
@@ -58,9 +59,17 @@ class User extends KyrstUser
 
 	public static function upload_profile_picture($image, $user_id)
 	{
-		// Create dir if not exists
 		$dir = self::get_profile_picture_dir($user_id);
 
+		// Delete new.jpg
+		$new_jpg_path = $dir . 'new.jpg';
+
+		if ( file_exists($new_jpg_path) )
+		{
+			unlink($new_jpg_path);
+		}
+
+		// Create dir if not exists
 		if ( !file_exists($dir) )
 		{
 			mkdir($dir, 0777, true);
@@ -110,5 +119,10 @@ class User extends KyrstUser
 		$interval = $now->diff($birthday);
 
 		return $interval->format('%y');
+	}
+
+	public function print_personal_statement()
+	{
+		return nl2br(e($this->personal_statement));
 	}
 }

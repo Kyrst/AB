@@ -29,9 +29,11 @@
 
 							<span id="user_name"><?= $user->get_name() ?></span>
 
-							<?php if ( $user->avatar === 'yes' ): ?>
-								<a href="<?= URL::route('dashboard/settings') ?>"><?= $user->get_profile_picture_image('dashboard', 'dashboard_profile_picture') ?></a>
-							<?php endif ?>
+							<a href="<?= URL::route('dashboard/settings') ?>"><?= $user->get_profile_picture_image('dashboard', 'dashboard_profile_picture') ?></a>
+
+							<div id="public_profile_link" class="row">
+								<a href="<?= $user->get_profile_url() ?>" class="btn btn-xs btn-default">Public Profile</a>
+							</div>
 						</div>
 
 						<?php /*<div class="search-box">
@@ -56,7 +58,7 @@
 									</a>
 								</li>
 
-								<!-- Profile -->
+								<!-- Inbox -->
 								<li<?php if ( $current_page === 'dashboard/inbox' ): ?> class="current"<?php endif ?>>
 									<a href="<?= URL::route('dashboard/inbox') ?>">
 										<span class="badge pull-right">17</span>
@@ -65,20 +67,27 @@
 								</li>
 
 								<!-- Profile -->
-								<li>
+								<?php /*<li>
 									<a href="<?= $user->get_profile_url() ?>">
 										<i class="icon-terminal"></i> Profile
 									</a>
+								</li>*/ ?>
+
+								<!-- Work Experience -->
+								<li<?php if ( $current_page === 'dashboard/work_experience' ): ?> class="current"<?php endif ?>>
+									<a href="<?= URL::route('dashboard/work-experience') ?>">
+										<i class="icon-terminal"></i> Work Experience
+									</a>
 								</li>
 
-								<!-- Profile -->
+								<!-- Settings -->
 								<li<?php if ( $current_page === 'dashboard/settings' ): ?> class="current"<?php endif ?>>
 									<a href="<?= URL::route('dashboard/settings') ?>">
 										<i class="icon-cog"></i> Settings
 									</a>
 								</li>
 
-								<!-- Settings -->
+								<!-- Log Out -->
 								<li>
 									<a href="<?= URL::route('log-out') ?>">
 										<i class="icon-terminal"></i> Log Out

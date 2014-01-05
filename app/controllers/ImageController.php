@@ -126,6 +126,17 @@ class ImageController extends ApplicationController
 
 		$image->save($image_dir . 'new.jpg');
 
+		Session::set('default_tab', 'profile_picture');
+
+		$ajax = new Ajax($this->notice);
+		$ajax->redirect(URL::route('dashboard/settings'));
+		$ajax->output();
+	}
+
+	public function delete_profile_picture()
+	{
+		$post = Input::all();
+
 		$ajax = new Ajax($this->notice);
 		$ajax->redirect(URL::route('dashboard/settings'));
 		$ajax->output();

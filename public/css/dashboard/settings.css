@@ -5,9 +5,11 @@
   display: block;
   margin-bottom: 10px; }
 
-#crop_button, #cancel_crop_button {
-  float: left;
+#current_profile_picture_button_container {
   margin-top: 8px; }
 
-#cancel_crop_button {
+#delete_picture_profile_button, #crop_button, #cancel_crop_button {
+  float: left; }
+
+#crop_button, #cancel_crop_button {
   margin-left: 5px; }

@@ -10,27 +10,7 @@ $(function()
 		aspectRatio: 10 / 11,
 		onSelect: function()
 		{
-			// Crop
-			$('#crop_button').css('display', 'block')
-				.on('click', function()
-				{
-					$kyrst.ajax.post
-					(
-						BASE_URL + 'crop-profile-picture',
-						{
-							user_id: user_id,
-							select: jcrop_api.tellSelect(),
-							scale: jcrop_api.tellScaled()
-						}
-					);
-				});
-
-			// Cancel crop
-			$('#cancel_crop_button').css('display', 'block')
-				.on('click', function()
-				{
-					jcrop_api.release();
-				});
+			show_crop_buttons();
 		}
 	}, function(){
 		jcrop_api = this;
@@ -60,6 +40,22 @@ $(function()
 			reader.readAsDataURL(this.files[0]);
 		}
 	});
+
+	$('#delete_picture_profile_button').on('click', function()
+	{
+		$kyrst.ui.show_confirm(
+			'Are you sure you want to delete your profile picture?',
+			function()
+			{
+				$kyrst.ajax.post(
+					BASE_URL + 'delete-profile-picture',
+					{
+						user_id: user_id
+					}
+				);
+			}
+		);
+	});
 });
 
 function settings_saved(e)
@@ -68,4 +64,36 @@ function settings_saved(e)
 	{
 		$settings_saved_message.show();
 	}
+}
+
+function show_crop_buttons()
+{
+// Crop
+	$('#crop_button').css('display', 'block')
+		.on('click', function()
+		{
+			$kyrst.ajax.post
+			(
+				BASE_URL + 'crop-profile-picture',
+				{
+					user_id: user_id,
+					select: jcrop_api.tellSelect(),
+					scale: jcrop_api.tellScaled()
+				}
+			);
+		});
+
+	// Cancel crop
+	$('#cancel_crop_button').css('display', 'block')
+		.on('click', function()
+		{
+			jcrop_api.release();
+
+			hide_crop_buttons();
+		});
+}
+
+function hide_crop_buttons()
+{
+	$('#crop_button, #cancel_crop_button').css('display', 'none');
 }

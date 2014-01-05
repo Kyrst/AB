@@ -1,0 +1,80 @@
+#sortable {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0; }
+
+#sortable li {
+  position: relative;
+  float: left;
+  clear: left;
+  width: 100%;
+  min-height: 120px;
+  margin-bottom: 5px;
+  background: #FFFAF3;
+  border: none;
+  border-bottom: 1px solid #CCC; }
+
+#sortable li.hover, #sortable li.open {
+  background: #FFF; }
+
+#sortable li.first {
+  border-top: 1px solid #E8E3DC; }
+
+#sortable li .inner {
+  margin: 0 20px 0 100px; }
+
+#sortable .controls {
+  position: absolute;
+  top: 58px;
+  left: 10px;
+  width: 100px; }
+
+#sortable li .controls .handle {
+  float: left;
+  width: 10px;
+  height: 2px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  cursor: move; }
+
+#sortable li .controls .active {
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin: -6px 0 0 4px;
+  background: url("../../images/mars-admin/chosen/chosen-sprite.png"); }
+
+#sortable li .right {
+  line-height: 120px; }
+
+#sortable li h2 {
+  font-size: 1.2em;
+  color: #333;
+  margin: 0;
+  line-height: 27px; }
+
+#sortable li .subject {
+  float: left;
+  margin-top: 20px; }
+
+#sortable li .subject p {
+  font-size: .9em;
+  font-weight: normal;
+  color: #AAA;
+  margin: 0; }
+
+#sortable li .subject .school h3, #sortable li .subject .language {
+  font-size: .9em;
+  color: #333;
+  margin: 0;
+  line-height: 20px; }
+
+#sortable li .right {
+  float: right; }
+
+#sortable li .box {
+  margin-bottom: 20px; }
+
+#personal_statement_dialog_textarea {
+  width: 760px;
+  height: 250px; }

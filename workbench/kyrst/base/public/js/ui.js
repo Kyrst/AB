@@ -4,7 +4,7 @@ ui.prototype =
 {
 	show_element_lock: false,
 
-	dialog_class: 'bgp-dialog',
+	dialog_class: 'kyrst-dialog',
 
 	dialogs: [],
 
@@ -33,7 +33,8 @@ ui.prototype =
 			width = 300,
 			height = 250,
 			resizable = false,
-			draggable = false;
+			draggable = false,
+			margin_top = 80;
 
 		if ( !$kyrst.is_undefined(extra) )
 		{
@@ -45,6 +46,24 @@ ui.prototype =
 			height = !$kyrst.is_undefined(extra.height) ? extra.height : 250;
 			resizable = !$kyrst.is_undefined(extra.resizable) ? extra.resizable : false;
 			draggable = !$kyrst.is_undefined(extra.draggable) ? extra.draggable : false;
+
+			if ( !$kyrst.is_undefined(extra.other.top) )
+			{
+				margin_top = extra.other.top;
+			}
+
+			if ( !$kyrst.is_undefined(extra.other.mask) )
+			{
+				var opacity = extra.other.mask.opacity;
+
+				//$('.ui-widget-overlay').css('background-color', extra.other.mask.color);
+
+				//$('.ui-widget-overlay').css('background', extra.other.mask.color).css('opacity', extra.other.mask.opacity);
+
+				// .ui-widget-overlay {	background: ' + extra.other.mask.color + ' url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .' + opacity + '; filter: Alpha(Opacity=' + opacity + ') }
+
+				//document.write('<style></style>');
+			}
 		}
 
 		var buttons_to_disable_from_start = [];
@@ -105,7 +124,7 @@ ui.prototype =
 		}
 		else
 		{
-			$('#' + dialog_id).html('<div id="' + dialog_id + '_loader" style="height:' + loader_height + 'px;line-height:' + loader_height + 'px" class="loader"></div><div id="' + dialog_id + '_body">' + $('#' + dialog_id).html() + '</div>').addClass(inst.dialog_class);
+			$('#' + dialog_id).html('<div id="' + dialog_id + '_loader" style="height:' + loader_height + 'px;line-height:' + loader_height + 'px" class="loader"></div><div id="' + dialog_id + '_body" class="body">' + $('#' + dialog_id).html() + '</div>').addClass(inst.dialog_class);
 		}
 
 		var dialog = $(selector).dialog(
@@ -117,7 +136,7 @@ ui.prototype =
 			resizable: resizable,
 			draggable: draggable,
 			buttons: buttons,
-			position: ['center', 80],
+			position: ['center', margin_top],
 			create: function()
 			{
 				// Events
@@ -429,7 +448,7 @@ ui.prototype =
 			draggable: draggable,
 			buttons: buttons,
 			events: events,
-			other: other,
+			other: other
 		}, element_selector.substring(1));
 	},
 
@@ -626,9 +645,9 @@ ui.prototype =
 				{
 					var button_click_result;
 
-					if ( $kyrst.is_function(button.action) )
+					if ( $kyrst.is_function(button.click) )
 					{
-						button_click_result = button.action();
+						button_click_result = button.click();
 					}
 
 					if ( button.close_on_click && button_click_result !== false )
@@ -666,7 +685,8 @@ ui.prototype =
 
 			button.set_title = function(title, disable)
 			{
-				$(this.selector).text(title);
+				//$(this.selector).text(title);
+				$(this.selector + ' .ui-button-text').text(title);
 
 				this.selector = '.ui-dialog-buttonpane button:contains(' + title + ')';
 

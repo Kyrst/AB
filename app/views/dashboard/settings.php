@@ -63,7 +63,8 @@
 						<?php if ( $user->avatar === 'yes' ): ?>
 							<?= $user->get_profile_picture_image('settings-page', 'settings_page_profile_picture') ?>
 
-							<div class="clearfix">
+							<div id="current_profile_picture_button_container" class="clearfix">
+								<a href="javascript:" id="delete_picture_profile_button" class="btn btn-primary">Delete</a>
 								<a href="javascript:" id="crop_button" class="btn btn-primary">Crop</a>
 								<a href="javascript:" id="cancel_crop_button" class="btn btn-default">Cancel</a>
 							</div>

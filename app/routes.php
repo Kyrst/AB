@@ -13,6 +13,7 @@ Route::get('/sign-up', array
 	'as' => 'sign-up'
 ));
 
+// Sign up (POST)
 Route::post('/sign-up', array
 (
 	'uses' => 'HomeController@sign_up'
@@ -25,16 +26,17 @@ Route::get('/login', array
 	'as' => 'login'
 ));
 
+// Login (POST)
+Route::post('/login', array
+(
+	'uses' => 'HomeController@login'
+));
+
 // Log out
 Route::get('/log-out', array
 (
 	'uses' => 'HomeController@log_out',
 	'as' => 'log-out'
-));
-
-Route::post('/login', array
-(
-	'uses' => 'HomeController@login'
 ));
 
 // Admin
@@ -44,6 +46,7 @@ Route::get('/admin', array
 	'as' => 'admin'
 ));
 
+// Newsletter submit (POST)
 Route::post('/newsletter-submit', array
 (
 	'uses' => 'HomeController@newsletter_submit'
@@ -61,6 +64,37 @@ Route::get('/dashboard/inbox', array
 (
 	'uses' => 'DashboardController@inbox',
 	'as' => 'dashboard/inbox'
+));
+
+// Dashboard: Work Experience
+Route::get('/dashboard/work-experience', array
+(
+	'uses' => 'DashboardController@work_experience',
+	'as' => 'dashboard/work-experience'
+));
+
+// Dashboard: Work Experience / Save personal statement (POST)
+Route::post('/dashboard/work-experience/save-personal-statement', array
+(
+	'uses' => 'DashboardController@save_personal_statement'
+));
+
+// Dashboard: Work Experience / Get personal statement
+Route::get('/dashboard/work-experience/get-personal-statement', array
+(
+	'uses' => 'DashboardController@get_personal_statement'
+));
+
+// Dashboard: Work Experience / Get autocomplete language
+Route::get('/dashboard/work-experience/get-autocomplete-languages', array
+(
+	'uses' => 'DashboardController@get_autocomplete_languages'
+));
+
+// Dashboard: Work Experience / Save autocomplete language (POST)
+Route::post('/dashboard/work-experience/save-autocomplete-language', array
+(
+	'uses' => 'DashboardController@save_autocomplete_language'
 ));
 
 // Dashboard: Settings
@@ -107,4 +141,10 @@ Route::get('/profile-picture/{id}/{size_name}', array
 Route::post('/crop-profile-picture', array
 (
 	'uses' => 'ImageController@crop_profile_picture'
+));
+
+// Delete profile picture (POST)
+Route::post('/delete-profile-picture', array
+(
+	'uses' => 'ImageController@delete_profile_picture'
 ));

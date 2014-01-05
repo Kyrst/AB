@@ -76,6 +76,16 @@ class HomeController extends ApplicationController
 					true
 				);
 
+				$this->user = Auth::user();
+
+				if ( $this->user->num_logins === 1 )
+				{
+					$this->user->first_time = 'no';
+				}
+
+				$this->user->num_logins++;
+				$this->user->save();
+
 				$ajax->redirect('dashboard');
 			}
 			catch ( Exception $e )
