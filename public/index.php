@@ -1,6 +1,5 @@
 <?php
-die('dennis test');
-
+die('asd');
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
