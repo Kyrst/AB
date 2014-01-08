@@ -87,6 +87,10 @@ class ApplicationController extends BaseController
 			'css' => 'libs/jquery-tagsinput/jquery.tagsinput.css',
 			'js' => 'libs/jquery-tagsinput/jquery.tagsinput.js'
 			//'js' => 'libs/jquery-tagsinput/jquery.tagsinput.min.js'
+		),
+		'jquery-transit' => array
+		(
+			'js' => 'libs/jquery_transit/jquery.transit.min.js'
 		)
 	);
 

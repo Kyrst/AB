@@ -7,31 +7,8 @@ class HomeController extends ApplicationController
 {
 	public function index()
 	{
-		/*$content = Email::render
-		(
-			'welcome_beta',
-			array
-			(
-				'code' => '281A'
-			)
-		);
-
-		die($content);*/
-
-		//User::register('dennis@actingbio.com', 'dennis', 'p3edz9', 'Dennis', 'Nygren', '1987-11-05');
-
-		/*$email = 'nygganh@nygganh.se';
-
-		$result = Mail::send('emails.welcome_beta', array(), function($message) use ($email)
-		{
-			$message->from('info@dev.actingbio.com', 'ActingBio');
-
-			$message->to($email)->subject('Welcome!');
-		});
-
-		die(var_dump($result));*/
-
 		$this->load_lib('jquery-lazyload');
+		$this->load_lib('jquery-transit');
 
 		$this->display();
 	}

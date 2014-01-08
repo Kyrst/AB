@@ -45,6 +45,14 @@ $(function()
 	});
 
 	$('#content').find('img.lazy').lazyload();
+
+    /*$('#test').on('mouseover', function()
+    {
+        $('#step_1_image').transition({ rotate: '45deg' });
+    }).on('mouseout', function()
+    {
+        $('#step_1_image').transition({ rotate: '0deg' });
+    });*/
 });
 
 function submit_newsletter()
