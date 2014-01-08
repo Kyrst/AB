@@ -37,8 +37,7 @@
 .steps-item p {
   font-family: "Times New Roman";
   color: #84949F;
-  line-height: 32px;
-  font-size: 18px; }
+  line-height: 32px; }
 
 #steps_middle_bar {
   top: 100px;
@@ -184,6 +183,4 @@
   margin-top: 45px;
   color: #AAA;
   font-size: 1.4em;
-  font-family: 'Questrial';
-  font-size: 20px;
-  background: red; }
+  font-family: 'Questrial'; }
