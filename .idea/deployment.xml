@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Acting Bio" uploadOnCheckin="e81e2494-0474-46eb-918f-b05b3856ab28">
-    <option name="myUploadOnCheckinName" value="Acting Bio" />
+  <component name="PublishConfigData" serverName="ActingBio">
+    <serverData>
+      <paths name="ActingBio">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/actingbio.com" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
   </component>
 </project>
 
