@@ -5,10 +5,10 @@ return array
 	(
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '127.0.0.1',
+			'host'      => 'localhost',
 			'database'  => 'actingbio',
 			'username'  => 'root',
-			'password'  => 'p3edz9',
+			'password'  => 'root',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => ''

@@ -37,7 +37,8 @@
 .steps-item p {
   font-family: "Times New Roman";
   color: #84949F;
-  line-height: 32px; }
+  line-height: 32px;
+  font-size: 15px; }
 
 #steps_middle_bar {
   top: 100px;
