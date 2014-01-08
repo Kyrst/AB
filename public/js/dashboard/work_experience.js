@@ -165,16 +165,16 @@ function init_languages_dialog()
 
 					$kyrst.ajax.post
 					(
-						BASE_URL + 'dashboard/work-experience/save-personal-statement',
+						BASE_URL + 'dashboard/work-experience/save-languages',
 						{
-							personal_statement: $('#personal_statement_dialog_textarea').val()
+							languages: $('#languages_dialog_input').val()
 						},
 						{
 							success: function(result)
 							{
-								refresh_personal_statement();
+								refresh_languages();
 
-								personal_statement_dialog.close();
+								languages_dialog.close();
 							},
 							error: function()
 							{
@@ -206,9 +206,10 @@ function init_languages_dialog()
 					{
 						selectFirst: true,
 						width: '100px',
-						autoFill: true
+						autoFill: true,
+						delay: 0
 					},
-					add_new_callback: BASE_URL + 'dashboard/work-experience/save-autocomplete-language',
+					//add_new_callback: BASE_URL + 'dashboard/work-experience/save-autocomplete-language',
 					defaultText: 'Add...',
 					onAddTag: function(e)
 					{

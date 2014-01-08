@@ -143,14 +143,16 @@ class DashboardController extends ApplicationController
 
 		$term = $input['term'];
 
-		$data = array
-		(
-			'name' => 'Dummy',
-			'size' => 'XL',
-			'color' => 'Blue'
-		);
+		$result_languages = Language::where('name', 'LIKE', '%' . $term . '%');
 
-		return Response::json($data);
+		$langauges = array();
+
+		foreach ( $result_languages->get() as $langauge )
+		{
+			$langauges[] = $langauge->name;
+		}
+
+		return Response::json($langauges);
 	}
 
 	public function save_autocomplete_language()

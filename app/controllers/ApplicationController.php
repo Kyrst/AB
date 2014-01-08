@@ -86,6 +86,7 @@ class ApplicationController extends BaseController
 		(
 			'css' => 'libs/jquery-tagsinput/jquery.tagsinput.css',
 			'js' => 'libs/jquery-tagsinput/jquery.tagsinput.js'
+			//'js' => 'libs/jquery-tagsinput/jquery.tagsinput.min.js'
 		)
 	);
 

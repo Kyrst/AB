@@ -272,8 +272,8 @@
 						});
 					}
 
-					if (settings.add_new_callback != undefined)
-					{
+					//if (settings.add_new_callback != undefined)
+					//{
 						// if a user tabs out of the field, create a new tag
 						// this is only available if autocomplete is not used.
 						$(data.fake_input).bind('blur',data,function(event) {
@@ -283,7 +283,7 @@
 							if ($(event.data.fake_input).val()!='' && $(event.data.fake_input).val()!=d) {
 								if( (event.data.minChars <= $(event.data.fake_input).val().length) && (!event.data.maxChars || (event.data.maxChars >= $(event.data.fake_input).val().length)) )
 								{
-									$.ajax(
+									/*$.ajax(
 									{
 										url: settings.add_new_callback,
 										type: 'POST',
@@ -292,9 +292,9 @@
 											value: new_tag_value
 										}
 									}).done(function(result)
-									{
+									{*/
 										$(event.data.real_input).addTag(new_tag_value,{focus:true,unique:(settings.unique)});
-									});
+									//});
 								}
 							} else {
 								$(event.data.fake_input).val($(event.data.fake_input).attr('data-default'));
@@ -302,7 +302,7 @@
 							}
 							return false;
 						});
-					}
+					//}
 				} else {
 					// if a user tabs out of the field, create a new tag
 					// this is only available if autocomplete is not used.
