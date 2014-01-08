@@ -1,1 +1,0 @@
-console.log('global ez fun');
