@@ -31,16 +31,16 @@ class User extends KyrstUser
 				'y' => 0
 			)*/
 		),
-		'public-profile' => array
+		'resume' => array
 		(
-			'width' => NULL,
-			'height' => 300
+			'width' => 215,
+			'height' => 285
 		)
 	);
 
-	public function get_profile_url()
+	public function get_resume_url()
 	{
-		return URL::to('profile/' . $this->username);
+		return URL::to('resume/' . $this->username);
 	}
 
 	public static function get_profile_picture_dir($user_id)

@@ -15,28 +15,15 @@
 		<?php endforeach; ?>
 	</head>
 	<body>
-		<div id="nav" class="navbar" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-
-					<a id="logo" class="navbar-brand" href="/"><img src="<?= asset('images/logo.png') ?>" width="149" height="102" alt=""></a>
-				</div>
-
-				<?php /*<div id="user_nav">
-					<a href="<?= URL::route('sign-up') ?>" id="sign_up">Sign Up</a><a href="<?= URL::route('login') ?>" id="login">Login</a>
-				</div>*/ ?>
-			</div>
+		<!-- Header -->
+		<div id="header">
 		</div>
 
 		<!-- Content -->
 		<div id="content" class="container">
-			<?= $content ?>
+			<div id="content_inner">
+				<?= $content ?>
+			</div>
 		</div>
 
 		<?= $js_vars ?>

@@ -1,0 +1,106 @@
+body
+{
+	background-color: #E9E9E9;
+}
+
+h1, h2, h3
+{
+	font-family: 'Questrial';
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+h1
+{
+	font-size: 1.7em;
+	color: #A37E2C;
+}
+
+h2
+{
+	font-size:1.2em;
+	color: #3D3D3D;
+}
+
+h3
+{
+	color: #1D5B9A;
+	font-size: 1.1em;
+}
+
+p
+{
+	font: normal 1em 'Times New Roman';
+	color: #84949F;
+}
+
+#sub_header
+{
+	font: normal 1em 'Questrial';
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #E7E7E7;
+}
+
+#header
+{
+	background-color: #000;
+	height: 70px;
+	background: url('/images/layouts/resumes/default/header.png');
+}
+
+#content
+{
+	width: 960px;
+	background: #FFF;
+	margin-top: 72px;
+	min-height: 700px;
+}
+
+#content_inner
+{
+	position: relative;
+	margin: 30px 20px;
+}
+
+#profile_picture_container
+{
+	float: left;
+	margin-right: 25px;
+}
+
+#info_container
+{
+	float: left;
+	padding-top: 20px;
+}
+
+#table_attributes
+{
+	margin-top: 30px;
+	width: 100%;
+}
+
+#table_attributes tr.heading-row th
+{
+	padding-top: 10px;
+}
+
+#table_attributes tr.heading-row.first th
+{
+	padding-top: 0
+}
+
+#table_attributes th
+{
+	text-transform: uppercase;
+	font: normal .9em 'Questrial';
+	color: #84949F;
+	letter-spacing: 1px;
+}
+
+#table_attributes td
+{
+	font: normal .9em 'Times New Roman';
+	color: #3b4A53;
+}

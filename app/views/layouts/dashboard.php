@@ -31,8 +31,8 @@
 
 							<a href="<?= URL::route('dashboard/settings') ?>"><?= $user->get_profile_picture_image('dashboard', 'dashboard_profile_picture') ?></a>
 
-							<div id="public_profile_link" class="row">
-								<a href="<?= $user->get_profile_url() ?>" class="btn btn-xs btn-default">Public Profile</a>
+							<div id="resume_link" class="row">
+								<a href="<?= $user->get_resume_url() ?>" class="btn btn-xs btn-default">Public Profile</a>
 							</div>
 						</div>
 

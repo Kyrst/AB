@@ -126,9 +126,9 @@ Event::listen('illuminate.query', function($query)
 });
 
 // Public profile page
-Route::get('/profile/{username}', array
+Route::get('/resume/{username}', array
 (
-	'uses' => 'ProfileController@public_profile'
+	'uses' => 'ResumeController@resume'
 ))->where('username', '[a-z0-9_\-]+');
 
 // User profile picture

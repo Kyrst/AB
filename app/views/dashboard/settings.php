@@ -17,7 +17,7 @@
 		<ul class="nav nav-tabs">
 			<li<?php if ( $default_tab === 'general' ): ?> class="active"<?php endif ?>><a href="#tab_general" data-toggle="tab"><i class="icon-bullseye"></i> General</a></li>
 			<li<?php if ( $default_tab === 'profile_picture' ): ?> class="active"<?php endif ?>><a href="#tab_profile_picture" data-toggle="tab"><i class="icon-bullseye"></i> Profile Picture</a></li>
-			<li<?php if ( $default_tab === 'public_profile' ): ?> class="active"<?php endif ?>><a href="#tab_public_profile" data-toggle="tab"><i class="icon-bullseye"></i> Public Profile</a></li>
+			<li<?php if ( $default_tab === 'resume' ): ?> class="active"<?php endif ?>><a href="#tab_resume" data-toggle="tab"><i class="icon-bullseye"></i> Public Profile</a></li>
 			<li<?php if ( $default_tab === 'email' ): ?> class="active"<?php endif ?>><a href="#tab_email" data-toggle="tab"><i class="icon-table"></i> E-mail</a></li>
 		</ul>
 
@@ -87,7 +87,7 @@
 				</div>
 			</div>
 
-			<div id="tab_public_profile" class="tab-pane<?php if ( $default_tab === 'public_profile' ): ?> active<?php endif ?>">
+			<div id="tab_resume" class="tab-pane<?php if ( $default_tab === 'resume' ): ?> active<?php endif ?>">
 				<div class="shadowed-bottom">
 					<form action="<?= URL::to('/dashboard/settings') ?>" method="post">
 						<div class="row">
