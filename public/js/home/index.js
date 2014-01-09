@@ -2,22 +2,17 @@ var $newsletter_email, $newsletter_email_button;
 
 var emblem_offset_top;
 
+var $body = $(document.body),
+    body_height = $body.height();
+
+var $start_here_button;
+
 $(function()
 {
 	$newsletter_email = $('#newsletter_email');
 	$newsletter_email_button = $('#newsletter_email_button');
 
 	emblem_offset_top = $('#emblem').offset().top;
-
-	/*$newsletter_email.on('keypress', function()
-	{
-		if ( $newsletter_email.val() !== '' )
-		{
-			return;
-		}
-
-		$('#newsletter_submit').fadeIn('slow');
-	});*/
 
 	$newsletter_email_button.on('click', function()
 	{
@@ -31,7 +26,8 @@ $(function()
 		return false;
 	});
 
-	$('#start_here_button').on('click', function()
+	$start_here_button = $('#start_here_button');
+	$start_here_button.on('click', function()
 	{
 		$('html, body').animate(
 		{
@@ -53,6 +49,20 @@ $(function()
     {
         $('#step_1_image').transition({ rotate: '0deg' });
     });*/
+
+	/*var scrollorama = $.scrollorama(
+	{
+		blocks: '.scrollblock'
+	});*/
+
+	//scrollorama.animate('#step_1_image',{ duration:500, property:'padding-top', start:100, pin:true })
+
+	//$('#step_1_image')
+});
+
+$(window).scroll(function()
+{
+	//$('#step_1_image').transition({ rotate: calculate_cog_scroll() + 'deg' });
 });
 
 function submit_newsletter()
@@ -96,4 +106,9 @@ function submit_newsletter()
 			}
 		}
 	);
+}
+
+function calculate_cog_scroll()
+{
+    return ($body.scrollTop() / body_height * 360);
 }

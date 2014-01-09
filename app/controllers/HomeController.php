@@ -9,6 +9,7 @@ class HomeController extends ApplicationController
 	{
 		$this->load_lib('jquery-lazyload');
 		$this->load_lib('jquery-transit');
+		$this->load_lib('scrollorama');
 
 		$this->display();
 	}
@@ -67,7 +68,7 @@ class HomeController extends ApplicationController
 			}
 			catch ( Exception $e )
 			{
-				$ajax->output_with_error('INVALID_CREDENTIALS');
+				$ajax->output_with_error($e->getMessage());
 			}
 
 			$ajax->output();

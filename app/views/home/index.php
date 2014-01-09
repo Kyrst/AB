@@ -13,9 +13,7 @@
 		<img src="<?= asset('images/home/index/circle_start.png') ?>" id="circle_start" width="110" height="109" class="steps-item">
 
 		<!-- Step 1 -->
-		<div id="test">
-			<img src="<?= asset('images/home/index/step_1.png') ?>" id="step_1_image" width="294" height="294" class="steps-item">
-		</div>
+		<img src="<?= asset('images/home/index/step_1.png') ?>" id="step_1_image" width="294" height="294" class="steps-item">
 
 		<div id="step_1_text" class="steps-item">
 			<span class="heading"><span class="number">1.</span> Set up Acting Bio in minutes</span>

@@ -91,6 +91,18 @@ class ApplicationController extends BaseController
 		'jquery-transit' => array
 		(
 			'js' => 'libs/jquery_transit/jquery.transit.min.js'
+		),
+		'scrollorama' => array
+		(
+			/*'css' => array
+			(
+				'libs/scrollorama/css/style.css'
+			),*/
+			'js' => array
+			(
+				'libs/scrollorama/js/jquery.lettering-0.6.1.min.js',
+				'libs/scrollorama/js/jquery.scrollorama.js'
+			)
 		)
 	);
 
