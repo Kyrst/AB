@@ -72,7 +72,7 @@ class User extends KyrstUser
 		// Create dir if not exists
 		if ( !file_exists($dir) )
 		{
-			mkdir($dir, 0777, true);
+			mkdir($dir, 0775, true);
 		}
 
 		$img = Image::make($image->getRealPath())

@@ -109,7 +109,7 @@ class ImageController extends ApplicationController
 		$image_dir = User::get_profile_picture_dir($user_id);
 		$image_path = User::get_profile_picture($user_id);
 
-		$this->init
+		/*$this->init
 		(
 			User::get_profile_picture_dir($user_id),
 			$user_id,
@@ -124,7 +124,9 @@ class ImageController extends ApplicationController
 		// Instead of doing the init() thing where we crop the resized image, we have to crop the original image.
 		// Calculate the difference between original image size with the resized one to get the ratio where we have to cut.
 
-		$image->save($image_dir . 'new.jpg');
+		$image->save($image_dir . 'new.jpg');*/
+
+		die(var_dump($image_path));
 
 		Session::set('default_tab', 'profile_picture');
 

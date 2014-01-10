@@ -1,16 +1,25 @@
 var $settings_saved_message,
 	jcrop_api;
 
+var $profile_picture_crop_preview;
+
 $(function()
 {
 	$settings_saved_message = $('#settings_saved_message');
 
+	$profile_picture_crop_preview = $('#profile_picture_crop_preview');
+
 	$('#settings_page_profile_picture').Jcrop(
 	{
 		aspectRatio: 10 / 11,
-		onSelect: function()
+		onSelect: function(coords)
 		{
+			refresh_crop_preview(coords);
 			show_crop_buttons();
+		},
+		onChange: function(coords)
+		{
+			refresh_crop_preview(coords);
 		}
 	}, function(){
 		jcrop_api = this;
@@ -96,4 +105,17 @@ function show_crop_buttons()
 function hide_crop_buttons()
 {
 	$('#crop_button, #cancel_crop_button').css('display', 'none');
+}
+
+function refresh_crop_preview(coords)
+{
+	var rx = 100 / coords.w;
+	var ry = 100 / coords.h;
+
+	$profile_picture_crop_preview.css({
+		width: Math.round(rx * 500) + 'px',
+		height: Math.round(ry * 370) + 'px',
+		marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+		marginTop: '-' + Math.round(ry * coords.y) + 'px'
+	});
 }

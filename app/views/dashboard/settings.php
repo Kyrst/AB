@@ -68,6 +68,10 @@
 								<a href="javascript:" id="crop_button" class="btn btn-primary">Crop</a>
 								<a href="javascript:" id="cancel_crop_button" class="btn btn-default">Cancel</a>
 							</div>
+
+							<div style="overflow:hidden;width:200px;height:200px">
+								<?= $user->get_profile_picture_image('settings-page', 'profile_picture_crop_preview') ?>
+							</div>
 						<?php else: ?>
 							No profile picture.
 						<?php endif ?>
