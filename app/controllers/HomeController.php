@@ -10,6 +10,7 @@ class HomeController extends ApplicationController
 		$this->load_lib('jquery-lazyload');
 		$this->load_lib('jquery-transit');
 		$this->load_lib('scrollorama');
+		$this->load_lib('animateWithCSS');
 
 		$this->display();
 	}

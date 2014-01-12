@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="ActingBio" uploadOnCheckin="e83e655a-0be1-4e47-a80c-5649cacb9c5b">
+  <component name="PublishConfigData" serverName="ActingBio" uploadOnCheckin="e81e2494-0474-46eb-918f-b05b3856ab28">
     <serverData>
       <paths name="ActingBio">
         <serverdata>
@@ -10,7 +10,7 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="ActingBio" />
+    <option name="myUploadOnCheckinName" value="Acting Bio" />
   </component>
 </project>
 

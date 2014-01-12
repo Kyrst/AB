@@ -8,7 +8,7 @@ return array
 			'host'      => 'localhost',
 			'database'  => 'actingbio',
 			'username'  => 'root',
-			'password'  => 'root',
+			'password'  => 'p3edz9',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => ''

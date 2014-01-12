@@ -11,6 +11,138 @@
   background: url("../../images/home/index/sign_me_up_button.png") no-repeat;
   margin: 230px auto 0; }
 
+#i_want_to_pre_register_container {
+  position: relative;
+  width: 600px;
+  margin: 240px auto; }
+
+#newsletter_form {
+  width: auto;
+  opacity: 0;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  margin-left: 70px; }
+
+#i_want_to_pre_register {
+  position: relative;
+  display: block;
+  width: 327px;
+  height: 48px;
+  margin: 0 auto;
+  background: url(../../images/home/index/i_want_to_pre_register.png) no-repeat;
+  z-index: 100;
+  cursor: text;
+  /*opacity: 0;
+  -ms-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);*/ }
+
+#i_want_to_pre_register .placeholder {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -183px;
+  z-index: 1;
+  display: inline-block;
+  width: 300px;
+  padding: 8px 12px 9px;
+  color: #ccc;
+  font-size: 18px;
+  text-align: left;
+  opacity: 0;
+  -ms-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
+  cursor: text; }
+
+#i_want_to_pre_register form {
+  height: 39px; }
+
+#i_want_to_pre_register input {
+  border: 0;
+  color: #fff;
+  -webkit-appearance: none;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+#i_want_to_pre_register input[type='email'] {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: inline-block;
+  opacity: 0;
+  width: 78px;
+  margin-left: -51px;
+  padding: 8px 12px 9px;
+  margin-right: -4px;
+  font-size: 18px;
+  background-color: #1c51c0;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 7px 5px -5px #1b50be,0 1px 0 #558cff;
+  box-shadow: inset 0 7px 5px -5px #1b50be,0 1px 0 #558cff;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  -ms-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: 0; }
+
+#i_want_to_pre_register input[type='submit'] {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  opacity: 0;
+  -ms-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
+  width: 1px;
+  height: 39px;
+  margin-left: 63px;
+  padding: 0;
+  text-indent: -1000em;
+  -webkit-border-radius: 0 5px 5px 0;
+  border-radius: 0 5px 5px 0;
+  background: #1c51c0 url(../../images/home/index/i_want_to_pre_register.png) right -20px no-repeat;
+  -webkit-box-shadow: inset 0 7px 5px -5px #1b50be,0 1px 0 #558cff;
+  box-shadow: inset 0 7px 5px -5px #1b50be,0 1px 0 #558cff;
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  -ms-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out; }
+
+#i_want_to_pre_register.open input[type='email'] {
+  width: 300px !important;
+  margin-left: -183px;
+  color: #a7a7a7;
+  background-color: #fff;
+  -webkit-box-shadow: inset 0 7px 5px -5px #e1e8f5,0 1px 0 #558cff;
+  box-shadow: inset 0 7px 5px -5px #e1e8f5,0 1px 0 #558cff;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  -webkit-border-radius: 5px 0 0 5px;
+  border-radius: 5px 0 0 5px; }
+
+#i_want_to_pre_register.open input[type='submit'] {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  width: 42px;
+  margin-left: 141px;
+  padding: 0 12px; }
+
 #index_content {
   padding-bottom: 60px; }
 
@@ -104,11 +236,11 @@
   margin: 0 auto;
   width: 277px;
   height: 229px;
-  background: url("../../images/home/index/emblem.png") no-repeat 0 70px; }
+  background: url("../../images/home/index/emblem.png") no-repeat 0 115px; }
 
 #newsletter_container, #newsletter_submitted {
   margin: 0 auto;
-  padding-top: 15px;
+  padding-top: 40px;
   width: 600px;
   text-align: center;
   height: 501px; }
@@ -121,13 +253,11 @@
   letter-spacing: 1px;
   margin-top: 0; }
 
-#newsletter_form {
-  min-height: 200px;
-  width: 400px;
-  margin: 30px auto 0; }
-
 #newsletter_email_container {
   margin-bottom: 20px; }
+
+#newsletter_email, #newsletter_email_button {
+  float: left; }
 
 #newsletter_info, #sign_up_description {
   font-family: 'Times New Roman';
@@ -148,20 +278,26 @@
 
 #newsletter_email {
   width: 365px;
-  height: 40px;
+  height: 42px;
   background: white url("../../images/home/index/newsletter_email_button_bg.gif");
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   color: #777;
+  border: 1px solid;
   border-top-color: #79797B;
-  border-left-color: #79797B; }
+  border-left-color: #79797B;
+  padding-left: 10px; }
 
 #newsletter_email[disabled] {
   cursor: default; }
 
 #newsletter_email_button {
-  color: #895A17;
+  width: 110px;
+  height: 42px;
+  background: url("../../images/home/index/newsletter_submit.png");
+  border: none;
+  /*color: #895A17;
   height: 40px;
   border-radius: 0;
   -webkit-border-radius: 0;
@@ -169,10 +305,7 @@
   font-family: 'Questrial';
   font-size: 1.5em;
   border-top-color: #ADADAE;
-  border-left-color: #adadae; }
-
-#newsletter_email_button[disabled] {
-  opacity: .9; }
+  border-left-color: #ADADAE*/ }
 
 #newsletter_submit {
   display: none;
@@ -180,7 +313,7 @@
 
 #newsletter_submitted {
   display: none;
-  margin-top: 45px;
+  margin-top: 200px;
   color: #AAA;
   font-size: 1.4em;
   font-family: 'Questrial'; }

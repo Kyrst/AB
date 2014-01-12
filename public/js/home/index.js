@@ -5,7 +5,7 @@ var emblem_offset_top;
 var $body = $(document.body),
     body_height = $body.height();
 
-var $start_here_button;
+var $start_here_button, submit_button_just_clicked = false, is_pre_register_open = false;
 
 $(function()
 {
@@ -14,13 +14,10 @@ $(function()
 
 	emblem_offset_top = $('#emblem').offset().top;
 
-	$newsletter_email_button.on('click', function()
-	{
-		submit_newsletter();
-	});
-
 	$('#newsletter_form').on('submit', function()
 	{
+		submit_button_just_clicked = true;
+
 		submit_newsletter();
 
 		return false;
@@ -57,8 +54,77 @@ $(function()
 
 	//scrollorama.animate('#step_1_image',{ duration:500, property:'padding-top', start:100, pin:true })
 
-	//$('#step_1_image')
+	//$('#i_want_to_pre_register').css('cursor', 'text');
+
+	$('#i_want_to_pre_register').on('mouseover', function()
+	{
+		if ( is_pre_register_open || submit_button_just_clicked )
+		{
+			return;
+		}
+
+		$(this).stop().animate(
+		{
+			opacity: 0
+		}, 250);
+
+		$('#newsletter_form').stop().animate(
+		{
+			opacity: 1
+		}, 250, function()
+		{
+			$(this).css('z-index' , '99999');
+
+			is_pre_register_open = true;
+		});
+	});
+
+	$('#i_want_to_pre_register').on('mouseout', function()
+	{
+		if ( is_pre_register_open || submit_button_just_clicked )
+		{
+			return;
+		}
+
+		if ( !$('#newsletter_email').is(':focus') || submit_button_just_clicked )
+		{
+			animate_out();
+		}
+	});
+
+	$('#newsletter_email').on('blur', function()
+	{
+		animate_out();
+	});
+
+	$('#newsletter_form').on('mouseleave', function()
+	{
+		if ( is_pre_register_open && $('#newsletter_email').val().length === 0 && !submit_button_just_clicked )
+		{
+			animate_out();
+		}
+	});
 });
+
+function animate_out()
+{
+	//$('#i_want_to_pre_register').css('cursor', 'pointer');
+
+	$('#newsletter_form').stop().animate(
+	{
+		opacity: 0
+	}, 250, function()
+	{
+		$(this).css('z-index' , '0');
+
+		is_pre_register_open = false;
+	});
+
+	$('#i_want_to_pre_register').stop().animate(
+	{
+		opacity: 1
+	}, 250);
+}
 
 $(window).scroll(function()
 {
@@ -74,8 +140,15 @@ function submit_newsletter()
 		return;
 	}
 
+	$('#i_want_to_pre_register').hide();
+
 	$newsletter_email.prop('disabled', true);
 	$newsletter_email_button.prop('disabled', true);
+
+	$('#i_want_to_pre_register_container').fadeOut('slow', function()
+	{
+		$('#newsletter_submitted').fadeIn();
+	});
 
 	$kyrst.ajax.post
 	(
@@ -89,11 +162,6 @@ function submit_newsletter()
 				if ( result.errors.length === 0 )
 				{
 					$newsletter_email.val('');
-
-					$('#newsletter_container').fadeOut('slow', function()
-					{
-						$('#newsletter_submitted').fadeIn();
-					});
 				}
 				else
 				{
@@ -103,6 +171,7 @@ function submit_newsletter()
 			},
 			complete: function()
 			{
+				submit_button_just_clicked = false;
 			}
 		}
 	);

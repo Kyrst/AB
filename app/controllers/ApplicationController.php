@@ -103,6 +103,10 @@ class ApplicationController extends BaseController
 				'libs/scrollorama/js/jquery.lettering-0.6.1.min.js',
 				'libs/scrollorama/js/jquery.scrollorama.js'
 			)
+		),
+		'animateWithCSS' => array
+		(
+			'js' => 'libs/animateWithCSS/animateWithCSS.js'
 		)
 	);
 

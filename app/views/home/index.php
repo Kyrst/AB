@@ -1,10 +1,29 @@
 <!-- Splash -->
+<?php /*
 <div id="splash">
 	<div class="container">
 		<a href="javascript:" id="start_here_button"></a>
 	</div>
+</div>*/ ?>
+
+<div id="splash">
+	<div class="container">
+		<div id="i_want_to_pre_register_container">
+			<div id="i_want_to_pre_register"></div>
+
+			<form action="<?= URL::route('home') ?>" method="post" id="newsletter_form">
+				<input type="email" name="email" id="newsletter_email" placeholder="Enter your e-mail address">
+				<button type="submit" id="newsletter_email_button" value="Submit"></button>
+			</form>
+		</div>
+
+		<div id="newsletter_submitted">
+			<p>Thank you for signing up for our BETA.</p>
+		</div>
+	</div>
 </div>
 
+<!-- From girl and down -->
 <div id="index_content" class="container">
 	<!-- Steps -->
 	<div id="steps_container">
@@ -57,7 +76,7 @@
 
 		<p id="newsletter_info">We are working diligently on a new platform. Professional features will be integrated seamlessly into the Acting Bio framework.</p>
 
-		<form action="<?= URL::route('home') ?>" method="post" id="newsletter_form">
+		<?php /*<form action="<?= URL::route('home') ?>" method="post" id="newsletter_form">
 			<div id="newsletter_email_container" class="row">
 				<div class="col-lg-6">
 					<div class="input-group">
@@ -71,7 +90,7 @@
 			</div>
 
 			<p id="sign_up_description" style="margin: 0 auto;text-align: center">ENTER YOUR E-MAIL TO SECURE YOUR BETA ACCOUNT NOW</p>
-		</form>
+		</form>*/ ?>
 	</div>
 
 	<div id="newsletter_submitted">
