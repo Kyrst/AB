@@ -5,6 +5,18 @@ class ResumeController extends ApplicationController
 
 	private $theme = 'default';
 
+	function __construct()
+	{
+		parent::__construct();
+	}
+
+	public function setupLayout($from_no_controller = false)
+	{
+		parent::setupLayout($from_no_controller);
+
+		$this->include_header();
+	}
+
 	public function resume($username)
 	{
 		try

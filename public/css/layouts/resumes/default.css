@@ -8,7 +8,8 @@ h1, h2, h3 {
 
 h1 {
   font-size: 1.7em;
-  color: #A37E2C; }
+  color: #A37E2C;
+  margin-top: 0; }
 
 h2 {
   font-size: 1.2em;
@@ -22,16 +23,16 @@ p {
   font: normal 1em 'Times New Roman';
   color: #84949F; }
 
+#header {
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0; }
+
 #sub_header {
   font: normal 1em 'Questrial';
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #E7E7E7; }
-
-#header {
-  background-color: #000;
-  height: 70px;
-  background: url("/images/layouts/resumes/default/header.png"); }
 
 #content {
   width: 960px;

@@ -16,8 +16,7 @@
 	</head>
 	<body>
 		<!-- Header -->
-		<div id="header">
-		</div>
+		<?= $header_html ?>
 
 		<!-- Content -->
 		<div id="content" class="container">

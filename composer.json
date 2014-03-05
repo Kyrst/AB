@@ -4,9 +4,10 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.0.*",
+		"laravel/framework": "4.1.*",
 		"toddish/verify": "2.2.*",
-		"intervention/image": "dev-master"
+		"intervention/image": "dev-master",
+		"kyrst/base": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

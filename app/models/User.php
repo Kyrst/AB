@@ -17,7 +17,7 @@ class User extends KyrstUser
 		'dashboard' => array
 		(
 			'width' => NULL,
-			'height' => 80,
+			'height' => 40
 			/*'canvas' => array
 			(
 				'width' => 150,
@@ -34,9 +34,24 @@ class User extends KyrstUser
 		'resume' => array
 		(
 			'width' => 215,
-			'height' => 285
+			'height' => 245,
+			'canvas' => array
+			(
+				'width' => NULL,
+				'height' => 245
+			)
 		)
 	);
+
+	public function hairType()
+	{
+		return $this->belongsTo('Hair_Type');
+	}
+
+	public function eyeColor()
+	{
+		return $this->belongsTo('Eye_Color');
+	}
 
 	public function get_resume_url()
 	{
@@ -52,9 +67,10 @@ class User extends KyrstUser
 	{
 		$dir = self::get_profile_picture_dir($user_id);
 
-		$new_file = $dir . 'new.jpg';
+		$new_filename = 'original.jpg';
+		$new_file = $dir . $new_filename;
 
-		return $dir . (file_exists($new_file) ? 'new.jpg' : 'original.jpg');
+		return $dir . (file_exists($new_file) ? $new_filename : 'original.jpg');
 	}
 
 	public static function upload_profile_picture($image, $user_id)
@@ -62,12 +78,12 @@ class User extends KyrstUser
 		$dir = self::get_profile_picture_dir($user_id);
 
 		// Delete new.jpg
-		$new_jpg_path = $dir . 'new.jpg';
+		/*$new_jpg_path = $dir . 'new.jpg';
 
 		if ( file_exists($new_jpg_path) )
 		{
 			unlink($new_jpg_path);
-		}
+		}*/
 
 		// Create dir if not exists
 		if ( !file_exists($dir) )
@@ -76,10 +92,25 @@ class User extends KyrstUser
 		}
 
 		$img = Image::make($image->getRealPath())
-			->resize(800, 600)
+			->resize(800, NULL, false, false)
 			->save($dir . 'original.jpg');
 
 		return $img;
+	}
+
+	public static function delete_profile_picture($user_id)
+	{
+		$profile_picture_path = self::get_profile_picture($user_id);
+
+		if ( file_exists($profile_picture_path) )
+		{
+			if ( unlink($profile_picture_path) )
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	public function get_profile_picture_image($size_name, $id = NULL)
@@ -94,11 +125,18 @@ class User extends KyrstUser
 		//$img_src = URL::to('profile-picture/' . $this->id . '/' . ($size['width'] !== NULL ? $size['width'] : '0') . '/' . ($size['height'] !== NULL ? $size['height'] : '0') . ($size['proportional'] === false ? '/1' : '')) . '"';
 		$img_src = URL::to('profile-picture/' . $this->id . '/' . $size_name);
 
-		$img_width = isset($size['canvas']) && $size['canvas']['width'] !== NULL ? $size['canvas']['width'] : ($size['width'] !== NULL ? ' width="' . $size['width'] . '"' : '');
-		$img_height = isset($size['canvas']) && $size['canvas']['height'] !== NULL ? $size['canvas']['height'] : ($size['height'] !== NULL ? ' height="' . $size['height'] . '"' : '');
+		$img_width = isset($size['canvas']) && $size['canvas']['width'] !== NULL ? ' width="' . $size['canvas']['width'] . '"' : ($size['width'] !== NULL && !isset($size['canvas']) ? ' width="' . $size['width'] . '"' : '');
+		$img_height = isset($size['canvas']) && $size['canvas']['height'] !== NULL ? ' height="' . $size['canvas']['height'] . '"' : ($size['height'] !== NULL && !isset($size['canvas']) ? ' height="' . $size['height'] . '"' : '');
 		$img_id = ($id !== NULL ? ' id="' . $id . '"' : '');
 
-		return '<img src="' . $img_src . '"' . $img_id . $img_width . $img_height . ' alt="' . $this->get_name() . '">';
+		$class = '';
+
+		if ( isset($size['rounded']) && $size['rounded'] === TRUE )
+		{
+			$class .= 'img-rounded';
+		}
+
+		return '<img src="' . $img_src . '"' . $img_id . $img_width . $img_height . ' class="' . $class . '" alt="' . $this->get_name() . '">';
 	}
 
 	public static function get_profile_picture_size($size_name)
@@ -121,8 +159,30 @@ class User extends KyrstUser
 		return $interval->format('%y');
 	}
 
+	public function get_birthdate()
+	{
+		$birthdate = new DateTime($this->birthdate);
+
+		return $birthdate->format('m/d/Y');
+	}
+
+	public function get_height()
+	{
+		return $this->height_feet . '\'' . $this->height_inches;
+	}
+
+	public function get_weight($measurement = 'lbs')
+	{
+		return $this->weight;
+	}
+
 	public function print_personal_statement()
 	{
 		return nl2br(e($this->personal_statement));
+	}
+
+	public function is_admin()
+	{
+		return $this->is('Admin');
 	}
 }

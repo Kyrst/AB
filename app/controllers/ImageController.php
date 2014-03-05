@@ -126,21 +126,60 @@ class ImageController extends ApplicationController
 
 		$image->save($image_dir . 'new.jpg');*/
 
-		die(var_dump($image_path));
+		$original_image = Image::make($image_path);
 
-		Session::set('default_tab', 'profile_picture');
+		$original_width = $original_image->width;
+		$original_height = $original_image->height;
 
-		$ajax = new Ajax($this->notice);
+		$aspect_x = $post['smaller_width'] / $original_width;
+		$aspect_y = $post['smaller_height'] / $original_height;
+
+		$original_image->crop($post['select']['w'] / $aspect_x, $post['select']['h'] / $aspect_y, $post['select']['x'] / $aspect_x, $post['select']['y'] / $aspect_y);
+		$original_image->save($image_dir . 'original.jpg');
+
+		// Clear cache
+		// ...
+
+		Session::put('default_settings_tab', 'profile_picture');
+
+		$ajax = new Ajax($this->ui);
 		$ajax->redirect(URL::route('dashboard/settings'));
-		$ajax->output();
+
+		return $ajax->output();
 	}
 
 	public function delete_profile_picture()
 	{
 		$post = Input::all();
 
-		$ajax = new Ajax($this->notice);
+		$user_id = (int)$post['user_id'];
+
+		$ajax = new Ajax($this->ui);
+
+		if ( !$this->user->is_admin() || $this->user->id !== $user_id )
+		{
+			return $ajax->output_with_error('NO_PERMISSIONS');
+		}
+
+		// Get user to delete profile picture from
+		try
+		{
+			$user = User::find($user_id)->firstOrFail();
+		}
+		catch ( \Illuminate\Database\Eloquent\ModelNotFoundException $e )
+		{
+			return $ajax->output_with_error('USER_NOT_FOUND');
+		}
+
+		User::delete_profile_picture($user_id);
+
+		$user->avatar = 'no';
+		$user->save();
+
+		Session::put('default_settings_tab', 'profile_picture');
+
 		$ajax->redirect(URL::route('dashboard/settings'));
-		$ajax->output();
+
+		return $ajax->output();
 	}
 }

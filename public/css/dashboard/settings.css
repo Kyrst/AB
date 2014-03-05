@@ -1,9 +1,8 @@
-#settings_saved_message, #profile_picture_upload_buttons_container, #crop_button, #cancel_crop_button {
+#settings_saved_message, #profile_picture_upload_buttons_container, #crop_button, #cancel_crop_button, #profile_picture_crop_preview {
   display: none; }
 
 #profile_picture_upload_preview {
-  display: block;
-  margin-bottom: 10px; }
+  text-align: center; }
 
 #current_profile_picture_button_container {
   margin-top: 8px; }
@@ -13,3 +12,12 @@
 
 #crop_button, #cancel_crop_button {
   margin-left: 5px; }
+
+#settings_page_profile_picture, #profile_picture_crop_preview {
+  float: left; }
+
+.jcrop-holder {
+  float: left; }
+
+#settings_tabs .tab-content {
+  margin-top: 15px; }

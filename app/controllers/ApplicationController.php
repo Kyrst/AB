@@ -74,6 +74,8 @@ class ApplicationController extends BaseController
 				'packages/kyrst/base/js/ajax_request.js',
 				'packages/kyrst/base/js/ajax.js',
 				'packages/kyrst/base/js/ui.js',
+				'packages/kyrst/base/js/helper.js',
+				'packages/kyrst/base/js/helpers/time.js',
 				'packages/kyrst/base/js/kyrst.js'
 			)
 		),
@@ -114,8 +116,11 @@ class ApplicationController extends BaseController
 	{
 		parent::__construct();
 
-		// Bootstrap
+		// jQuery
 		$this->load_lib('jquery');
+
+		// jQuery UI
+		$this->load_lib('jquery-ui');
 
 		// Bootstrap
 		$this->load_lib('bootstrap');
@@ -131,5 +136,22 @@ class ApplicationController extends BaseController
 
 		// Kyrst
 		$this->load_lib('kyrst');
+	}
+
+	protected function include_header()
+	{
+		$this->assign
+		(
+			'header_html',
+			View::make
+			(
+				'layouts/partials/header'
+			)
+			->with('user', $this->user)
+			->with('current_controller', $this->current_controller)
+			->with('current_page', $this->current_page)
+			->render(),
+			'layout'
+		);
 	}
 }

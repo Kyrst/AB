@@ -1,13 +1,11 @@
 <?php
 $app = new Illuminate\Foundation\Application;
 
-$app->redirectIfTrailingSlash();
-
 $env = $app->detectEnvironment
 (
 	array
 	(
-		'local' => array('actingbio.loc'),
+		'local' => array('denniss-mbp'),
 		'dev' => array('dev.actingbio.loc'),
 		'live' => array('actingbio.com')
 	)

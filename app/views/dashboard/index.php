@@ -14,7 +14,9 @@
 			</div>
 		</div>
 	<?php else: ?>
-		<div class="widget">
+		Yo yo...
+
+		<?php /*<div class="widget">
 			<div class="widget-controls pull-right">
 				<a href="#" class="widget-link-remove"><i class="icon-minus-sign"></i></a>
 				<a href="#" class="widget-link-remove"><i class="icon-remove-sign"></i></a>
@@ -328,6 +330,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>*/ ?>
 	<?php endif ?>
 </div>

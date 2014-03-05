@@ -1,7 +1,7 @@
 <div id="main" class="container">
 	<h1>Login</h1>
 
-	<form action="<?= URL::route('login') ?>" method="post" class="form-horizontal kyrst-auto-submit" role="form" data-submit_button_loading_text="Logging In...">
+	<form action="<?= URL::route('login') ?>" method="post" class="form-horizontal" role="form">
 		<div class="form-group">
 			<label for="email" class="col-sm-2 control-label">E-mail</label>
 			<div class="col-sm-10">

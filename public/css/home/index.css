@@ -157,11 +157,13 @@
   position: absolute; }
 
 .steps-item .heading {
+  display: block;
   text-transform: uppercase;
   color: #3D3D3D;
   font-family: 'Questrial';
   font-size: 1.4em;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+  margin-bottom: 5px; }
 
 .steps-item .heading .number {
   color: #a37e2c; }
@@ -213,7 +215,7 @@
   width: 400px; }
 
 #start_here {
-  top: 1020px;
+  top: 1018px;
   left: 167.5px;
   width: 645px;
   height: 98px;

@@ -6,4 +6,4 @@ define('PAGE_TITLE_SEPARATOR', '-');
 $public_path = public_path();
 $public_path = !empty($public_path) ? $public_path . '/' : '';
 
-define('BASE_URL', URL::route('home', array(), false));
+define('BASE_URL', URL::to('home'));

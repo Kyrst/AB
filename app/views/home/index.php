@@ -11,7 +11,7 @@
 		<div id="i_want_to_pre_register_container">
 			<div id="i_want_to_pre_register"></div>
 
-			<form action="<?= URL::route('home') ?>" method="post" id="newsletter_form">
+			<form action="<?= URL::route('home') ?>" method="post" id="newsletter_form" novalidate>
 				<input type="email" name="email" id="newsletter_email" placeholder="Enter your e-mail address">
 				<button type="submit" id="newsletter_email_button" value="Submit"></button>
 			</form>

@@ -1,6 +1,5 @@
 <?php
 use Kyrst\Base\Helpers\Ajax as Ajax;
-use Kyrst\Base\Helpers\Notice as Notice;
 use Kyrst\Base\Helpers\Email as Email;
 
 class HomeController extends ApplicationController
@@ -22,10 +21,10 @@ class HomeController extends ApplicationController
 			return Redirect::route('dashboard');
 		}
 
-		if ( $this->is_ajax )
-		{
-			$post = Input::all();
+		$post = Input::all();
 
+		if ( $post )
+		{
 			$validation = Validator::make
 			(
 				$post,
@@ -36,7 +35,7 @@ class HomeController extends ApplicationController
 				)
 			);
 
-			$ajax = new Ajax($this->notice);
+			$ajax = new Ajax($this->ui);
 
 			if ( $validation->fails() )
 			{
@@ -65,14 +64,16 @@ class HomeController extends ApplicationController
 				$this->user->num_logins++;
 				$this->user->save();
 
-				$ajax->redirect('dashboard');
+				return Redirect::route('dashboard');
+				//$ajax->redirect('dashboard');
 			}
 			catch ( Exception $e )
 			{
-				$ajax->output_with_error($e->getMessage());
+				//$ajax->output_with_error($e->getMessage());
+				$this->ui->add_error($e->getMessage());
 			}
 
-			$ajax->output();
+			return Redirect::back();
 		}
 
 		$this->display(NULL, 'Login to Acting Bio', false);
@@ -136,7 +137,9 @@ class HomeController extends ApplicationController
 				)
 			);
 
-			$ajax->output();
+			$ajax->redirect('dashboard');
+
+			return $ajax->output();
 		}
 
 		$this->display(NULL, 'Sign Up for Acting Bio', false, array('bootstrap-datepicker'));
@@ -156,7 +159,7 @@ class HomeController extends ApplicationController
 		// Check if e-mail is valid
 		if ( !filter_var($post['email'], FILTER_VALIDATE_EMAIL) )
 		{
-			$ajax->output_with_error('Please enter a valid e-mail address.');
+			return $ajax->output_with_error('Please enter a valid e-mail address.');
 		}
 
 		$email = trim($post['email']);
@@ -199,6 +202,24 @@ class HomeController extends ApplicationController
 
 		error_log($email . ' signed up for BETA. Mail result: ' . ($result === 1 ? 'OK' : 'Fail') . ' (' . (string)$result . ')');
 
-		$ajax->output();
+		return $ajax->output();
+	}
+
+	public function terms()
+	{
+		$this->display
+		(
+			NULL,
+			'Terms & Conditions'
+		);
+	}
+
+	public function privacy()
+	{
+		$this->display
+		(
+			NULL,
+			'Privacy'
+		);
 	}
 }

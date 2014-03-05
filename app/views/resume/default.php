@@ -14,8 +14,8 @@
 				<th>Weight</th>
 			</tr>
 			<tr>
-				<td>5'8</td>
-				<td>175 lbs</td>
+				<td><?= $profile_user->get_height() ?></td>
+				<td><?= $profile_user->get_weight('lbs') ?> lbs</td>
 			</tr>
 			<tr class="heading-row">
 				<th>Hair</th>
@@ -23,21 +23,9 @@
 				<th>Age</th>
 			</tr>
 			<tr>
-				<td>Blonde/Brown</td>
-				<td>Blue</td>
-				<td>26</td>
-			</tr>
-			<tr class="heading-row">
-				<th>Shirt</th>
-				<th>Pants</th>
-				<th>Suit</th>
-				<th>Shoe</th>
-			</tr>
-			<tr>
-				<td>16/32</td>
-				<td>30x30</td>
-				<td>43L</td>
-				<td>11</td>
+				<td><?= $user->hairType->name ?></td>
+				<td><?= $user->eyeColor->name ?></td>
+				<td><?= $user->get_age() ?></td>
 			</tr>
 		</table>
 	</div>

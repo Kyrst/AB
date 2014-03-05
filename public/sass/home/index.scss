@@ -187,11 +187,13 @@ $i_want_to_pre_register_width: 327px;
 
 .steps-item .heading
 {
+	display: block;
 	text-transform: uppercase;
 	color: #3D3D3D;
 	font-family: 'Questrial';
 	font-size: 1.4em;
 	letter-spacing: 2px;
+	margin-bottom: 5px;
 }
 
 .steps-item .heading .number
@@ -269,7 +271,7 @@ $i_want_to_pre_register_width: 327px;
 // Start Here
 #start_here
 {
-	top: $steps_middle_bar_height + 90;
+	top: $steps_middle_bar_height + 88;
 	left: $steps_container_width / 2 - $start_here_width + ($start_here_width / 2);
 	width: $start_here_width;
 	height: 98px;

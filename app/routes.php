@@ -6,6 +6,20 @@ Route::get('/', array
 	'as' => 'home'
 ));
 
+// Terms
+Route::get('/terms', array
+(
+	'uses' => 'HomeController@terms',
+	'as' => 'terms'
+));
+
+// Privacy
+Route::get('/privacy', array
+(
+	'uses' => 'HomeController@privacy',
+	'as' => 'privacy'
+));
+
 // Sign Up
 Route::get('/sign-up', array
 (
@@ -46,6 +60,13 @@ Route::get('/admin', array
 	'as' => 'admin'
 ));
 
+// Admin: Users
+Route::get('/admin/users', array
+(
+	'uses' => 'AdminController@users',
+	'as' => 'admin/users'
+));
+
 // Newsletter submit (POST)
 Route::post('/newsletter-submit', array
 (
@@ -64,6 +85,19 @@ Route::get('/dashboard/inbox', array
 (
 	'uses' => 'DashboardController@inbox',
 	'as' => 'dashboard/inbox'
+));
+
+// Dashboard: Resume
+Route::get('/dashboard/resume', array
+(
+	'uses' => 'DashboardController@resume',
+	'as' => 'dashboard/resume'
+));
+
+// Dashboard: Resume (POST)
+Route::post('/dashboard/resume', array
+(
+	'uses' => 'DashboardController@resume'
 ));
 
 // Dashboard: Work Experience
@@ -121,7 +155,6 @@ Event::listen('illuminate.query', function($query)
 	if ( app()->environment() === 'local' && Input::get('profiler') )
 	{
 		echo $query, '<hr>';
-		exit;
 	}
 });
 

@@ -15,7 +15,7 @@
 		<?php endforeach; ?>
 	</head>
 	<body>
-		<div id="nav" class="navbar" role="navigation">
+		<div id="header" class="navbar" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -28,11 +28,27 @@
 					<a id="logo" class="navbar-brand" href="/"><img src="<?= asset('images/logo.png') ?>" width="149" height="102"></a>
 				</div>
 
-				<?php /*<div id="user_nav">
+				<div id="user_nav">
 					<a href="<?= URL::route('sign-up') ?>" id="sign_up">Sign Up</a><a href="<?= URL::route('login') ?>" id="login">Login</a>
-				</div>*/ ?>
+				</div>
 			</div>
 		</div>
+
+		<?php if ( $current_page !== 'home/index' ): ?>
+			<div id="nav_container">
+				<div id="nav">
+					<div class="container">
+						<ul>
+							<li><a href="/">About</a></li>
+							<li><a href="/">Pricing</a></li>
+							<li><a href="/">Blog</a></li>
+							<li><a href="/">Support</a></li>
+							<li><a href="/">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<?php endif ?>
 
 		<!-- Content -->
 		<div id="content">

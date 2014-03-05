@@ -1,0 +1,7 @@
+#content p {
+  margin-bottom: 30px; }
+
+#splash {
+  height: 260px;
+  background-color: #EEE;
+  background: #eeeeee url(../../images/white_gray_pattern_bg.png) repeat; }
